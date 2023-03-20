@@ -1,5 +1,5 @@
 {
-    "name": "SourceInputActions",
+    "name": "Input_Actions",
     "maps": [
         {
             "name": "Player2D",
@@ -7,12 +7,12 @@
             "actions": [
                 {
                     "name": "MoveUp",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "e6fc92a2-7f1f-4ce1-aae1-207d22a460ba",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "MoveDown",
@@ -1055,7 +1055,7 @@
                     "id": "966a3824-9cb9-483b-8c73-9a6582f55616",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press(behavior=2)",
                     "initialStateCheck": false
                 },
                 {
@@ -1197,7 +1197,7 @@
                     "name": "",
                     "id": "279f6012-9c73-42b5-9f00-9567dcb75bf9",
                     "path": "<Keyboard>/z",
-                    "interactions": "",
+                    "interactions": "Tap",
                     "processors": "",
                     "groups": "",
                     "action": "Interact",
