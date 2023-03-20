@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Ent_Player
+  - Ent_Party
+  - Ent_Peaceful
+  - Ent_Hostile
+  - Ent_Hitbox
+  - Sys_LoadingBar
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Trigger
+  - Grounded Collider
+  - Collider
+  - Aerial Collider
+  - Entity
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Tiles
+    uniqueID: 2770246807
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Entity
+    uniqueID: 1882530071
+    locked: 0
+  - name: Mask
+    uniqueID: 2899975867
+    locked: 0
+  - name: Trigger
+    uniqueID: 1566509075
+    locked: 0
+  - name: UI
+    uniqueID: 3935240453
+    locked: 0
