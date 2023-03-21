@@ -3471,6 +3471,7 @@ GameObject:
   m_Component:
   - component: {fileID: 133392413}
   - component: {fileID: 133392414}
+  - component: {fileID: 133392415}
   m_Layer: 0
   m_Name: '[Title]'
   m_TagString: Untagged
@@ -3507,6 +3508,162 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 133392412}
   m_CullTransparentMesh: 1
+--- !u!114 &133392415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133392412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc10cc6fbd1a0c833bcf1283fba1cb2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedTextColor: {r: 1, g: 1, b: 1, a: 1}
+  unselectedTextColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  pressedTextColor: {r: 1, g: 1, b: 1, a: 1}
+  selectedImageColor: {r: 0.38, g: 0.38, b: 0.38, a: 0.6}
+  unselectedImageColor: {r: 0.15, g: 0.15, b: 0.15, a: 0.7490196}
+  pressedImageColor: {r: 0.1, g: 0.1, b: 0.1, a: 0.6}
+  colorLerpTime: 0.05
+  wrapAroundScrolling: 0
+  horizontalScrolling: 0
+  menuOptions:
+  - textNormal: Start
+    textSelected: Start
+    selectable: 1
+    textObject: {fileID: 2011987684}
+    imageObject: {fileID: 722494378}
+    onHovered:
+      m_PersistentCalls:
+        m_Calls: []
+    onSelected:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4787547529315764256}
+          m_TargetAssemblyTypeName: System_SceneLoader, Assembly-CSharp
+          m_MethodName: LoadScene
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Tmp_Overworld
+            m_BoolArgument: 0
+          m_CallState: 2
+  - textNormal: Options
+    textSelected: Options
+    selectable: 1
+    textObject: {fileID: 1524091210}
+    imageObject: {fileID: 1785896689}
+    onHovered:
+      m_PersistentCalls:
+        m_Calls: []
+    onSelected:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1749116527}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 133392415}
+          m_TargetAssemblyTypeName: UI_ScrollControl, Assembly-CSharp
+          m_MethodName: SetToDeselected
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 133392415}
+          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - textNormal: Credits
+    textSelected: Credits
+    selectable: 1
+    textObject: {fileID: 766908095}
+    imageObject: {fileID: 1018958726}
+    onHovered:
+      m_PersistentCalls:
+        m_Calls: []
+    onSelected:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 164854477}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 133392415}
+          m_TargetAssemblyTypeName: UI_ScrollControl, Assembly-CSharp
+          m_MethodName: SetToDeselected
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 133392415}
+          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - textNormal: Quit
+    textSelected: Quit
+    selectable: 1
+    textObject: {fileID: 248317965}
+    imageObject: {fileID: 1465710886}
+    onHovered:
+      m_PersistentCalls:
+        m_Calls: []
+    onSelected:
+      m_PersistentCalls:
+        m_Calls: []
+  onBack:
+    m_PersistentCalls:
+      m_Calls: []
+  scroll: {fileID: 0}
+  selectSuccess: {fileID: 0}
+  selectDenied: {fileID: 0}
 --- !u!1 &139261234
 GameObject:
   m_ObjectHideFlags: 0
@@ -4512,6 +4669,7 @@ GameObject:
   - component: {fileID: 164854478}
   - component: {fileID: 164854480}
   - component: {fileID: 164854479}
+  - component: {fileID: 164854481}
   m_Layer: 0
   m_Name: '[Credits]'
   m_TagString: Untagged
@@ -4578,6 +4736,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 164854477}
   m_CullTransparentMesh: 1
+--- !u!114 &164854481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164854477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc10cc6fbd1a0c833bcf1283fba1cb2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedTextColor: {r: 1, g: 1, b: 1, a: 1}
+  unselectedTextColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  pressedTextColor: {r: 1, g: 1, b: 1, a: 1}
+  selectedImageColor: {r: 0.38, g: 0.38, b: 0.38, a: 0.6}
+  unselectedImageColor: {r: 0.15, g: 0.15, b: 0.15, a: 0.75}
+  pressedImageColor: {r: 0.1, g: 0.1, b: 0.1, a: 0.6}
+  colorLerpTime: 0.05
+  wrapAroundScrolling: 0
+  horizontalScrolling: 0
+  menuOptions: []
+  onBack:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 133392415}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 164854477}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  scroll: {fileID: 0}
+  selectSuccess: {fileID: 0}
+  selectDenied: {fileID: 0}
 --- !u!1 &169387063
 GameObject:
   m_ObjectHideFlags: 0
@@ -8742,7 +8952,6 @@ GameObject:
   - component: {fileID: 300961468}
   - component: {fileID: 300961471}
   - component: {fileID: 300961470}
-  - component: {fileID: 300961469}
   m_Layer: 0
   m_Name: Controls
   m_TagString: Untagged
@@ -8771,50 +8980,6 @@ RectTransform:
   m_AnchoredPosition: {x: 879, y: -43.5}
   m_SizeDelta: {x: 342, y: 72}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &300961469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 300961467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 0
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.7490196}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0.6}
-    m_PressedColor: {r: 0.25, g: 0.25, b: 0.25, a: 0.6}
-    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_DisabledColor: {r: 0.25, g: 0.25, b: 0.25, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 300961470}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &300961470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27589,7 +27754,6 @@ GameObject:
   - component: {fileID: 1105221298}
   - component: {fileID: 1105221301}
   - component: {fileID: 1105221300}
-  - component: {fileID: 1105221299}
   m_Layer: 0
   m_Name: Sound
   m_TagString: Untagged
@@ -27618,50 +27782,6 @@ RectTransform:
   m_AnchoredPosition: {x: 529, y: -43.5}
   m_SizeDelta: {x: 342, y: 72}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1105221299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1105221297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 0
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.7490196}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0.6}
-    m_PressedColor: {r: 0.25, g: 0.25, b: 0.25, a: 0.6}
-    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_DisabledColor: {r: 0.25, g: 0.25, b: 0.25, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1105221300}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1105221300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38416,7 +38536,6 @@ GameObject:
   - component: {fileID: 1450515513}
   - component: {fileID: 1450515515}
   - component: {fileID: 1450515514}
-  - component: {fileID: 1450515516}
   m_Layer: 0
   m_Name: '[Sidebar]'
   m_TagString: Untagged
@@ -38485,78 +38604,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1450515512}
   m_CullTransparentMesh: 1
---- !u!114 &1450515516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1450515512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc10cc6fbd1a0c833bcf1283fba1cb2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectedTextColor: {r: 1, g: 1, b: 1, a: 1}
-  unselectedTextColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  pressedTextColor: {r: 1, g: 1, b: 1, a: 1}
-  selectedImageColor: {r: 0.38, g: 0.38, b: 0.38, a: 0.6}
-  unselectedImageColor: {r: 0.15, g: 0.15, b: 0.15, a: 0.7490196}
-  pressedImageColor: {r: 0.1, g: 0.1, b: 0.1, a: 0.6}
-  colorLerpTime: 0.05
-  wrapAroundScrolling: 0
-  horizontalScrolling: 0
-  menuOptions:
-  - textNormal: Start
-    textSelected: Start
-    selectable: 1
-    textObject: {fileID: 2011987684}
-    imageObject: {fileID: 722494378}
-    onHovered:
-      m_PersistentCalls:
-        m_Calls: []
-    onSelected:
-      m_PersistentCalls:
-        m_Calls: []
-  - textNormal: Options
-    textSelected: Options
-    selectable: 1
-    textObject: {fileID: 1524091210}
-    imageObject: {fileID: 1785896689}
-    onHovered:
-      m_PersistentCalls:
-        m_Calls: []
-    onSelected:
-      m_PersistentCalls:
-        m_Calls: []
-  - textNormal: Credits
-    textSelected: Credits
-    selectable: 1
-    textObject: {fileID: 766908095}
-    imageObject: {fileID: 1018958726}
-    onHovered:
-      m_PersistentCalls:
-        m_Calls: []
-    onSelected:
-      m_PersistentCalls:
-        m_Calls: []
-  - textNormal: Quit
-    textSelected: Quit
-    selectable: 1
-    textObject: {fileID: 248317965}
-    imageObject: {fileID: 1465710886}
-    onHovered:
-      m_PersistentCalls:
-        m_Calls: []
-    onSelected:
-      m_PersistentCalls:
-        m_Calls: []
-  onBack:
-    m_PersistentCalls:
-      m_Calls: []
-  scroll: {fileID: 0}
-  selectSuccess: {fileID: 0}
-  selectDenied: {fileID: 0}
 --- !u!1 &1451350308
 GameObject:
   m_ObjectHideFlags: 0
@@ -44788,7 +44835,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1676907915
 RectTransform:
   m_ObjectHideFlags: 0
@@ -46571,6 +46618,7 @@ GameObject:
   - component: {fileID: 1749116528}
   - component: {fileID: 1749116529}
   - component: {fileID: 1749116530}
+  - component: {fileID: 1749116531}
   m_Layer: 0
   m_Name: '[Options]'
   m_TagString: Untagged
@@ -46637,6 +46685,58 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1749116531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749116527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc10cc6fbd1a0c833bcf1283fba1cb2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedTextColor: {r: 1, g: 1, b: 1, a: 1}
+  unselectedTextColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  pressedTextColor: {r: 1, g: 1, b: 1, a: 1}
+  selectedImageColor: {r: 0.38, g: 0.38, b: 0.38, a: 0.6}
+  unselectedImageColor: {r: 0.15, g: 0.15, b: 0.15, a: 0.75}
+  pressedImageColor: {r: 0.1, g: 0.1, b: 0.1, a: 0.6}
+  colorLerpTime: 0.05
+  wrapAroundScrolling: 0
+  horizontalScrolling: 0
+  menuOptions: []
+  onBack:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 133392415}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1749116527}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  scroll: {fileID: 0}
+  selectSuccess: {fileID: 0}
+  selectDenied: {fileID: 0}
 --- !u!1 &1749480091
 GameObject:
   m_ObjectHideFlags: 0
@@ -55300,6 +55400,7 @@ GameObject:
   - component: {fileID: 2038872635}
   - component: {fileID: 2038872634}
   - component: {fileID: 2038872636}
+  - component: {fileID: 2038872637}
   m_Layer: 0
   m_Name: '[Actions]'
   m_TagString: Untagged
@@ -55395,6 +55496,354 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &2038872637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038872631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc10cc6fbd1a0c833bcf1283fba1cb2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedTextColor: {r: 1, g: 1, b: 1, a: 1}
+  unselectedTextColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  pressedTextColor: {r: 1, g: 1, b: 1, a: 1}
+  selectedImageColor: {r: 0.38, g: 0.38, b: 0.38, a: 0.6}
+  unselectedImageColor: {r: 0.15, g: 0.15, b: 0.15, a: 0.75}
+  pressedImageColor: {r: 0.1, g: 0.1, b: 0.1, a: 0.6}
+  colorLerpTime: 0.05
+  wrapAroundScrolling: 0
+  horizontalScrolling: 1
+  menuOptions:
+  - textNormal: Graphics
+    textSelected: Graphics
+    selectable: 1
+    textObject: {fileID: 373118446}
+    imageObject: {fileID: 2042181958}
+    onHovered:
+      m_PersistentCalls:
+        m_Calls: []
+    onSelected:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1676907914}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 356362668}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 227749511}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1740409477}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - textNormal: Sound
+    textSelected: Sound
+    selectable: 1
+    textObject: {fileID: 1673150120}
+    imageObject: {fileID: 1105221300}
+    onHovered:
+      m_PersistentCalls:
+        m_Calls: []
+    onSelected:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1676907914}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 356362668}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 227749511}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1740409477}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - textNormal: Controls
+    textSelected: Controls
+    selectable: 1
+    textObject: {fileID: 1979345347}
+    imageObject: {fileID: 300961470}
+    onHovered:
+      m_PersistentCalls:
+        m_Calls: []
+    onSelected:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1676907914}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 356362668}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 227749511}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1740409477}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - textNormal: Gameplay
+    textSelected: Gameplay
+    selectable: 1
+    textObject: {fileID: 170857211}
+    imageObject: {fileID: 2107374719}
+    onHovered:
+      m_PersistentCalls:
+        m_Calls: []
+    onSelected:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1676907914}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 356362668}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 227749511}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1740409477}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  onBack:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1676907914}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 356362668}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 227749511}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1740409477}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2038872637}
+        m_TargetAssemblyTypeName: UI_ScrollControl, Assembly-CSharp
+        m_MethodName: SetScrollIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 133392415}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1749116527}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  scroll: {fileID: 0}
+  selectSuccess: {fileID: 0}
+  selectDenied: {fileID: 0}
 --- !u!1 &2042181955
 GameObject:
   m_ObjectHideFlags: 0
@@ -55406,7 +55855,6 @@ GameObject:
   - component: {fileID: 2042181956}
   - component: {fileID: 2042181959}
   - component: {fileID: 2042181958}
-  - component: {fileID: 2042181957}
   m_Layer: 0
   m_Name: Graphics
   m_TagString: Untagged
@@ -55435,50 +55883,6 @@ RectTransform:
   m_AnchoredPosition: {x: 179, y: -43.5}
   m_SizeDelta: {x: 342, y: 72}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2042181957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2042181955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 0
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.7490196}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0.6}
-    m_PressedColor: {r: 0.25, g: 0.25, b: 0.25, a: 0.6}
-    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_DisabledColor: {r: 0.25, g: 0.25, b: 0.25, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 2042181958}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &2042181958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57170,7 +57574,6 @@ GameObject:
   - component: {fileID: 2107374717}
   - component: {fileID: 2107374720}
   - component: {fileID: 2107374719}
-  - component: {fileID: 2107374718}
   m_Layer: 0
   m_Name: Gameplay
   m_TagString: Untagged
@@ -57199,50 +57602,6 @@ RectTransform:
   m_AnchoredPosition: {x: 1229, y: -43.5}
   m_SizeDelta: {x: 342, y: 72}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2107374718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2107374716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 0
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.7490196}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0.6}
-    m_PressedColor: {r: 0.25, g: 0.25, b: 0.25, a: 0.6}
-    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_DisabledColor: {r: 0.25, g: 0.25, b: 0.25, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 2107374719}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &2107374719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57585,6 +57944,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &4787547529315764256 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1714173407229465060, guid: 975903aa428f9fa0ebcff7f7cdb683d9, type: 3}
+  m_PrefabInstance: {fileID: 7244046732934427886}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee0c401fd5bde035bc87e3cb9271d21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &5854254539542163360
 Transform:
   m_ObjectHideFlags: 0

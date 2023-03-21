@@ -86,9 +86,10 @@ public class UI_ScrollControl : MonoBehaviour
 
     private void Update()
     {
+	    SelectControl();
+	    if (menuOptions.Length == 0) return;
 	    IndexControl();
 	    SetColorAndText();
-	    SelectControl();
     }
     
     
@@ -118,7 +119,7 @@ public class UI_ScrollControl : MonoBehaviour
 				else if (scrollIndex == 0 && wrapAroundScrolling) { scrollIndex = indexLimit; PlayAudio("Scroll"); }
 				ScrollEvent();
 			}
-			else if (!horizontalScrolling && action.MoveDown.IsPressed() || horizontalScrolling && action.MoveLeft.IsPressed())
+			if (!horizontalScrolling && action.MoveDown.IsPressed() || horizontalScrolling && action.MoveRight.IsPressed())
 			{
 				if (scrollIndex < indexLimit && !wrapAroundScrolling) { scrollIndex++; PlayAudio("Scroll"); }
 				else if (scrollIndex == indexLimit && wrapAroundScrolling) { scrollIndex = 0; PlayAudio("Scroll"); }
@@ -150,16 +151,16 @@ public class UI_ScrollControl : MonoBehaviour
     // Handel selecting a menu option or hitting the back button
     private void SelectControl()
     {
+	    if (action.Back.WasPressedThisFrame())
+	    {
+		    onBack.Invoke();
+	    }
+	    if (menuOptions.Length == 0) return;
 	    if (action.Interact.WasPressedThisFrame())
 	    {
 		    PlayAudio("Select"); 
 		    menuOptions[scrollIndex].onSelected.Invoke();
 	    }
-	    else if (action.Back.WasPressedThisFrame())
-	    {
-		    onBack.Invoke();
-	    }
-
 	    if (action.Interact.IsPressed())
 	    {
 		    menuOptions[scrollIndex].imageObject.color = Color.Lerp(menuOptions[scrollIndex].imageObject.color, pressedImageColor, colorLerpTime);
