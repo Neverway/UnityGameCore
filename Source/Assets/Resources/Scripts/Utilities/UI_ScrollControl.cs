@@ -12,7 +12,6 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class UI_ScrollControl : MonoBehaviour
@@ -21,20 +20,28 @@ public class UI_ScrollControl : MonoBehaviour
     // Public variables
     //=-----------------=
     [Header("Colors")]
-    [Tooltip("The color of the sprite when it's selected")]
-    [SerializeField] private Color selectedColor = new Color(1,1,1,1);
-    [Tooltip("The color of the sprite when it's not selected")]
-    [SerializeField] private Color unselectedColor = new Color(0.25f,0.25f,0.25f,1);
+    [Tooltip("The color of the text when it's selected")]
+    [SerializeField] private Color selectedTextColor = new Color(1,1,1,1);
+    [Tooltip("The color of the text when it's not selected")]
+    [SerializeField] private Color unselectedTextColor = new Color(0.5f,0.5f,0.5f,1);
+    [Tooltip("The color of the text when it's pressed")]
+    [SerializeField] private Color pressedTextColor = new Color(1,1,1,1);
+    [Tooltip("The color of the image when it's selected")]
+    [SerializeField] private Color selectedImageColor = new Color(0.38f,0.38f,0.38f,0.6f);
+    [Tooltip("The color of the image when it's not selected")]
+    [SerializeField] private Color unselectedImageColor = new Color(0.15f,0.15f,0.15f,0.75f);
+    [Tooltip("The color of the image when it's pressed")]
+    [SerializeField] private Color pressedImageColor = new Color(0.1f,0.1f,0.1f,0.6f);
+    [Tooltip("How long it takes for the image or text color transition")]
+    [SerializeField] private float colorLerpTime = 0.05f;
     
     [Header("Options")]
     [Tooltip("If true, when reaching the end of the list, wrap back around to the other side")]
     [SerializeField] private bool wrapAroundScrolling;
     [Tooltip("If true, the left and right keys are used to navigate the menu instead of the up and down keys")]
     [SerializeField] private bool horizontalScrolling;
-    [Tooltip("If true, looks for the TMP pro component on the textOptions instead of the standard text component")]
-    [SerializeField] private bool usingTextMeshPro = true;
     [Tooltip("The selectable options that will be scrolled through")]
-    [SerializeField] private TextOptions[] textOption;
+    [SerializeField] private MenuOptions[] menuOptions;
     [Tooltip("Executes when the back key is pressed and the menu is active")]
     [SerializeField] private UnityEvent onBack;
     
@@ -72,15 +79,9 @@ public class UI_ScrollControl : MonoBehaviour
 
     private void Start()
     {
-	    indexLimit = textOption.Length-1;
+	    indexLimit = menuOptions.Length-1;
 	    action = new Input_Actions().Menu;
 	    action.Enable();
-    }
-
-    private IEnumerator RepeatPressDelay()
-    {
-	    yield return new WaitForSeconds(0.2f);
-	    acceptingInput = true;
     }
 
     private void Update()
@@ -94,54 +95,35 @@ public class UI_ScrollControl : MonoBehaviour
     //=-----------------=
     // Internal Functions
     //=-----------------=
+    private IEnumerator RepeatPressDelay()
+    {
+	    yield return new WaitForSeconds(0.2f);
+	    acceptingInput = true;
+    }
+
+    private void ScrollEvent()
+    {
+	    acceptingInput = false;
+	    menuOptions[scrollIndex].onHovered.Invoke();
+	    StartCoroutine(RepeatPressDelay());
+    }
+    
     // Control scrolling through the menu and firing onHover events
     private void IndexControl()
     {
-	    // Scroll up and down through the menu
-	    if (!horizontalScrolling)
-		{
-			if (action.MoveUp.IsPressed())
+	    if (!acceptingInput) return;
+			if (!horizontalScrolling && action.MoveUp.IsPressed() || horizontalScrolling && action.MoveLeft.IsPressed())
 			{
-				if (!acceptingInput) { return; }
-				acceptingInput = false;
 				if (scrollIndex > 0 && !wrapAroundScrolling) { scrollIndex--; PlayAudio("Scroll"); }
 				else if (scrollIndex == 0 && wrapAroundScrolling) { scrollIndex = indexLimit; PlayAudio("Scroll"); }
-				textOption[scrollIndex].onHovered.Invoke();
-				StartCoroutine(RepeatPressDelay());
+				ScrollEvent();
 			}
-			else if (action.MoveDown.IsPressed())
+			else if (!horizontalScrolling && action.MoveDown.IsPressed() || horizontalScrolling && action.MoveLeft.IsPressed())
 			{
-				if (!acceptingInput) { return; }
-				acceptingInput = false;
 				if (scrollIndex < indexLimit && !wrapAroundScrolling) { scrollIndex++; PlayAudio("Scroll"); }
 				else if (scrollIndex == indexLimit && wrapAroundScrolling) { scrollIndex = 0; PlayAudio("Scroll"); }
-				textOption[scrollIndex].onHovered.Invoke();
-				StartCoroutine(RepeatPressDelay());
+				ScrollEvent();
 			}
-		}
-	    
-	    // Scroll left and right through the menu
-		else
-		{
-			if (action.MoveLeft.IsPressed())
-			{
-				if (!acceptingInput) { return; }
-				acceptingInput = false;
-				if (scrollIndex > 0 && !wrapAroundScrolling) { scrollIndex--; PlayAudio("Scroll"); }
-				else if (scrollIndex == 0 && wrapAroundScrolling) { scrollIndex = indexLimit; PlayAudio("Scroll"); }
-				textOption[scrollIndex].onHovered.Invoke();
-				StartCoroutine(RepeatPressDelay());
-			}
-			else if (action.MoveRight.IsPressed())
-			{
-				if (!acceptingInput) { return; }
-				acceptingInput = false;
-				if (scrollIndex < indexLimit && !wrapAroundScrolling) { scrollIndex++; PlayAudio("Scroll"); }
-				else if (scrollIndex == indexLimit && wrapAroundScrolling) { scrollIndex = 0; PlayAudio("Scroll"); }
-				textOption[scrollIndex].onHovered.Invoke();
-				StartCoroutine(RepeatPressDelay());
-			}
-		}
     }
 
     // Set the colors of the text objects based on weather they are selected or not
@@ -151,29 +133,16 @@ public class UI_ScrollControl : MonoBehaviour
 	    {
 		    if (i != scrollIndex)
 		    {
-			    if (!usingTextMeshPro)
-			    {
-				    textOption[i].textObject.GetComponent<Text>().color = unselectedColor;
-				    textOption[i].textObject.GetComponent<Text>().text = textOption[i].textNormal;
-			    }
-			    else
-			    {
-				    textOption[i].textObject.GetComponent<TMP_Text>().color = unselectedColor;
-				    textOption[i].textObject.GetComponent<TMP_Text>().text = textOption[i].textNormal;
-			    }
+			    
+			    menuOptions[i].imageObject.color = Color.Lerp(menuOptions[i].imageObject.color, unselectedImageColor, colorLerpTime);
+			    menuOptions[i].textObject.color = Color.Lerp(menuOptions[i].textObject.color, unselectedTextColor, colorLerpTime);
+			    menuOptions[i].textObject.text = menuOptions[i].textNormal;
 		    }
 		    else
 		    {
-			    if (!usingTextMeshPro)
-			    {
-				    textOption[i].textObject.gameObject.GetComponent<Text>().color = selectedColor;
-				    textOption[i].textObject.GetComponent<Text>().text = textOption[i].textSelected;
-			    }
-			    else
-			    {
-				    textOption[i].textObject.gameObject.GetComponent<TMP_Text>().color = selectedColor;
-				    textOption[i].textObject.GetComponent<TMP_Text>().text = textOption[i].textSelected;
-			    }
+			    menuOptions[i].imageObject.color = Color.Lerp(menuOptions[i].imageObject.color, selectedImageColor, colorLerpTime);
+			    menuOptions[i].textObject.color = Color.Lerp(menuOptions[i].textObject.color, selectedTextColor, colorLerpTime);
+			    menuOptions[i].textObject.text = menuOptions[i].textSelected;
 		    }
 	    }
     }
@@ -184,11 +153,22 @@ public class UI_ScrollControl : MonoBehaviour
 	    if (action.Interact.WasPressedThisFrame())
 	    {
 		    PlayAudio("Select"); 
-		    textOption[scrollIndex].onSelected.Invoke();
+		    menuOptions[scrollIndex].onSelected.Invoke();
 	    }
 	    else if (action.Back.WasPressedThisFrame())
 	    {
 		    onBack.Invoke();
+	    }
+
+	    if (action.Interact.IsPressed())
+	    {
+		    menuOptions[scrollIndex].imageObject.color = Color.Lerp(menuOptions[scrollIndex].imageObject.color, pressedImageColor, colorLerpTime);
+		    menuOptions[scrollIndex].textObject.color = Color.Lerp(menuOptions[scrollIndex].textObject.color, pressedTextColor, colorLerpTime);
+	    }
+	    else if (action.Interact.WasReleasedThisFrame())
+	    {
+		    menuOptions[scrollIndex].imageObject.color = Color.Lerp(menuOptions[scrollIndex].imageObject.color, selectedImageColor, colorLerpTime);
+		    menuOptions[scrollIndex].textObject.color = Color.Lerp(menuOptions[scrollIndex].textObject.color, selectedTextColor, colorLerpTime);
 	    }
     }
 
@@ -204,7 +184,7 @@ public class UI_ScrollControl : MonoBehaviour
 		    }
 		    case "Select":
 		    {
-			    switch (textOption[scrollIndex].selectable)
+			    switch (menuOptions[scrollIndex].selectable)
 			    {
 				    case true when selectSuccess:
 					    selectSuccess.Play();
@@ -219,7 +199,7 @@ public class UI_ScrollControl : MonoBehaviour
     }
     
     [Serializable]
-    public class TextOptions
+    public class MenuOptions
     {
 	    
 	    [Tooltip("The string to display normally")]
@@ -229,7 +209,9 @@ public class UI_ScrollControl : MonoBehaviour
 	    [Tooltip("If true, the select success sound will play and onSelected will be executed")]
 	    public bool selectable = true;
 	    [Tooltip("The target that the string and color will be applied to (must have a text or TMP text component)")]
-	    public GameObject textObject;
+	    public TMP_Text textObject;
+	    [Tooltip("The target that the string and color will be applied to (must have a text or TMP text component)")]
+	    public Image imageObject;
 	    [Tooltip("Executes when the current index becomes active")]
 	    public UnityEvent onHovered;
 	    [Tooltip("Executes if the menu selection key is pressed and the index is selectable")]
@@ -252,29 +234,21 @@ public class UI_ScrollControl : MonoBehaviour
     
     public void SetToDeselected()
     {
-	    
 	    for (int i = 0; i < indexLimit+1; i++)
 	    {
-		    if (!usingTextMeshPro)
-		    {
-			    textOption[i].textObject.GetComponent<Text>().color = unselectedColor;
-			    textOption[i].textObject.GetComponent<Text>().text = textOption[i].textNormal;
-		    }
-		    else
-		    {
-			    textOption[i].textObject.GetComponent<TMP_Text>().color = unselectedColor;
-			    textOption[i].textObject.GetComponent<TMP_Text>().text = textOption[i].textNormal;
-		    }
+		    menuOptions[i].imageObject.color = Color.Lerp(menuOptions[scrollIndex].imageObject.color, unselectedImageColor, colorLerpTime);
+		    menuOptions[i].textObject.color = Color.Lerp(menuOptions[scrollIndex].textObject.color, unselectedTextColor, colorLerpTime);
+		    menuOptions[i].textObject.text = menuOptions[i].textNormal;
 	    }
     }
 
     public void SetNormalText(int _index, string _text)
     {
-	    textOption[_index].textNormal = _text;
+	    menuOptions[_index].textNormal = _text;
     }
 
     public void SetSelectedText(int _index, string _text)
     {
-	    textOption[_index].textSelected = _text;
+	    menuOptions[_index].textSelected = _text;
     }
 }
