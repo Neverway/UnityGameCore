@@ -2,8 +2,6 @@
 // [G13]
 // Purpose: Allow button Inputs to scroll through and interacting with a menu
 // Applied to: The root of a UI menu
-// Editor script: 
-// Notes: 
 //
 //=============================================================================
 

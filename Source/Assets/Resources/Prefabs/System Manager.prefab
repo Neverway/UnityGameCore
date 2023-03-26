@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 686817144650057554}
   - component: {fileID: 6013674713891119978}
   - component: {fileID: 1714173407229465060}
+  - component: {fileID: 6332604518915966513}
   m_Layer: 0
   m_Name: System Manager
   m_TagString: Untagged
@@ -60,3 +61,36 @@ MonoBehaviour:
   delayBeforeSceneChange: 0.25
   minRequiredLoadTime: 2
   loadingScreenSceneID: Loading
+--- !u!114 &6332604518915966513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926439679384849972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f70bbcc36f7188398a9aa900b9dbab6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonInputs:
+  - bindingID: <Keyboard>/0
+    bindingIcon: {fileID: 21300000, guid: b19536b532148cd7f8ccc51af2c3911a, type: 3}
+  - bindingID: <Keyboard>/1
+    bindingIcon: {fileID: 21300000, guid: b19536b532148cd7f8ccc51af2c3911a, type: 3}
+  - bindingID: <Keyboard>/2
+    bindingIcon: {fileID: 21300000, guid: b19536b532148cd7f8ccc51af2c3911a, type: 3}
+  - bindingID: <Keyboard>/3
+    bindingIcon: {fileID: 21300000, guid: b19536b532148cd7f8ccc51af2c3911a, type: 3}
+  - bindingID: <Keyboard>/4
+    bindingIcon: {fileID: 21300000, guid: b19536b532148cd7f8ccc51af2c3911a, type: 3}
+  - bindingID: <Keyboard>/5
+    bindingIcon: {fileID: 21300000, guid: b19536b532148cd7f8ccc51af2c3911a, type: 3}
+  - bindingID: <Keyboard>/6
+    bindingIcon: {fileID: 21300000, guid: b19536b532148cd7f8ccc51af2c3911a, type: 3}
+  - bindingID: <Keyboard>/7
+    bindingIcon: {fileID: 21300000, guid: b19536b532148cd7f8ccc51af2c3911a, type: 3}
+  - bindingID: <Keyboard>/9
+    bindingIcon: {fileID: 21300000, guid: b19536b532148cd7f8ccc51af2c3911a, type: 3}
+  - bindingID: <Keyboard>/a
+    bindingIcon: {fileID: 21300000, guid: b19536b532148cd7f8ccc51af2c3911a, type: 3}
