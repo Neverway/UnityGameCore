@@ -10,12 +10,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class UI_MenuScroll : MonoBehaviour
 {
     //=-----------------=
     // Public Variables
     //=-----------------=
+    public bool activateOnStart;
 
 
     //=-----------------=
@@ -26,6 +28,7 @@ public class UI_MenuScroll : MonoBehaviour
     //=-----------------=
     // Reference Variables
     //=-----------------=
+    public GameObject firstButton;
 
 
     //=-----------------=
@@ -33,12 +36,7 @@ public class UI_MenuScroll : MonoBehaviour
     //=-----------------=
     private void Start()
     {
-	
-    }
-
-    private void Update()
-    {
-	
+	    if (activateOnStart) Activate();
     }
     
     //=-----------------=
@@ -49,5 +47,15 @@ public class UI_MenuScroll : MonoBehaviour
     //=-----------------=
     // External Functions
     //=-----------------=
+    public void Activate()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(firstButton);
+    }
+    
+    public void Deactivate()
+    {
+        //EventSystem.current.SetSelectedGameObject(null);
+    }
 }
 
