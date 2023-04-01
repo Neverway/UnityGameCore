@@ -65,7 +65,7 @@ public class UI_ScrollControl : MonoBehaviour
     //=-----------------=
     private Input_Actions.MenuActions action;
 
-
+/*
     //=-----------------=
     // Mono Functions
     //=-----------------=
@@ -196,7 +196,7 @@ public class UI_ScrollControl : MonoBehaviour
 		    }
 	    }
     }
-    
+    */
     [Serializable]
     public class MenuOptions
     {
