@@ -11,7 +11,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UI_MenuNavigation : MonoBehaviour
+public class UI_Menu_Navigation : MonoBehaviour
 {
     //=-----------------=
     // Public Variables
