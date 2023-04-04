@@ -1,31 +1,34 @@
 //========== Neverway 2022 Project Script | Written by Unknown Dev ============
 // 
-// Purpose: Output the value of a slider to a TMP_Text component
+// Purpose: 
+// Applied to: 
+// Editor script: 
+// Notes: 
 //
 //=============================================================================
 
-using TMPro;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.Audio;
 
-public class UI_Text_SliderValue : MonoBehaviour
+public class System_ApplicaitonSettings : MonoBehaviour
 {
     //=-----------------=
     // Public Variables
     //=-----------------=
-    [SerializeField] private float offset;
+    public AudioMixer audioMixer;
 
 
     //=-----------------=
     // Private Variables
     //=-----------------=
+    private string targetVolumeChannel;
     
     
     //=-----------------=
     // Reference Variables
     //=-----------------=
-    private TMP_Text tmpText;
-    [SerializeField] private Slider slider;
 
 
     //=-----------------=
@@ -33,13 +36,12 @@ public class UI_Text_SliderValue : MonoBehaviour
     //=-----------------=
     private void Start()
     {
-	    tmpText = GetComponent<TMP_Text>();
+	
     }
 
     private void Update()
     {
-	    if (!tmpText || !slider) return;
-	    tmpText.text = (slider.value + offset).ToString();
+	
     }
     
     //=-----------------=
@@ -50,5 +52,13 @@ public class UI_Text_SliderValue : MonoBehaviour
     //=-----------------=
     // External Functions
     //=-----------------=
+    public void SetVolumeChannelTarget(string _channel)
+    {
+	    targetVolumeChannel = _channel;
+    }
+    public void SetVolume(float _level)
+    {
+	    audioMixer.SetFloat(targetVolumeChannel, _level);
+    }
 }
 
