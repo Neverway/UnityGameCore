@@ -9,6 +9,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -24,11 +25,13 @@ public class System_ApplicaitonSettings : MonoBehaviour
     // Private Variables
     //=-----------------=
     private string targetVolumeChannel;
+    private Resolution[] supportedResolutions;
     
     
     //=-----------------=
     // Reference Variables
     //=-----------------=
+    [SerializeField] private TMP_Dropdown displayResolutionDropdown;
 
 
     //=-----------------=
@@ -36,7 +39,23 @@ public class System_ApplicaitonSettings : MonoBehaviour
     //=-----------------=
     private void Start()
     {
-	
+	    supportedResolutions = Screen.resolutions;
+	    displayResolutionDropdown.ClearOptions();
+	    List<string> options = new List<string>();
+	    int currentResolutionIndex = 0;
+	    for (int i = 0; i < supportedResolutions.Length; i++)
+	    {
+		    string option = supportedResolutions[i].width + " x " + supportedResolutions[i].height;
+		    options.Add(option);
+		    if (supportedResolutions[i].width == Screen.currentResolution.width &&
+		        supportedResolutions[i].height == Screen.currentResolution.height)
+		    {
+			    currentResolutionIndex = i;
+		    }
+	    }
+	    displayResolutionDropdown.AddOptions(options);
+	    displayResolutionDropdown.value = currentResolutionIndex;
+	    displayResolutionDropdown.RefreshShownValue();
     }
 
     private void Update()
@@ -56,9 +75,28 @@ public class System_ApplicaitonSettings : MonoBehaviour
     {
 	    targetVolumeChannel = _channel;
     }
+    
     public void SetVolume(float _level)
     {
 	    audioMixer.SetFloat(targetVolumeChannel, _level);
+    }
+
+    public void SetWindowMode(int _mode)
+    {
+	    if (_mode == 0)
+		    Screen.fullScreenMode = FullScreenMode.Windowed;
+	    else if (_mode == 1)
+		    Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
+	    else if (_mode == 2)
+		    Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
+	    else
+		    Screen.fullScreenMode = Screen.fullScreenMode;
+    }
+
+    public void SetDisplayResolution(int _resolutionIndex)
+    {
+	    Resolution resolution = supportedResolutions[_resolutionIndex];
+	    Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreenMode);
     }
 }
 

@@ -22,6 +22,7 @@ public class UI_Menu_FocusScrollView : MonoBehaviour
     //=-----------------=
     [Tooltip("The selectable ui elements and their corresponding target that should be autofocused to")]
     public FocusableElement[] focusableElements;
+    [SerializeField] private bool useContentChildrenAsFocusableElements;
     
 
 
@@ -45,6 +46,16 @@ public class UI_Menu_FocusScrollView : MonoBehaviour
     private void Start()
     {
         scrollRect = GetComponent<ScrollRect>();
+        if (!useContentChildrenAsFocusableElements) return;
+        for (int i = 0; i < contentWindow.childCount; i++)
+        {
+            Array.Resize(ref focusableElements, contentWindow.childCount);
+            if (focusableElements.Length != contentWindow.childCount) return;
+            if (focusableElements[i].selectableElement) 
+                focusableElements[i].selectableElement = contentWindow.GetChild(i).gameObject;
+            if (focusableElements[i].focusTarget) 
+                focusableElements[i].focusTarget = contentWindow.GetChild(i).GetComponent<RectTransform>();
+        }
     }
 
     private void Update()
@@ -83,6 +94,7 @@ public class UI_Menu_FocusScrollView : MonoBehaviour
     {
         foreach (var _element in focusableElements)
         {
+            if (focusableElements.Length == 0 || !_element.selectableElement || !_element.focusTarget) return;
             if (selectedUIObject == _element.selectableElement)
             {
                 SnapTo(_element.focusTarget , _element.offset);
