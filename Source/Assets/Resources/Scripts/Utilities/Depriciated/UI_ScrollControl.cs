@@ -57,7 +57,7 @@ public class UI_ScrollControl : MonoBehaviour
     //=-----------------=
     private int scrollIndex; // The current position in the menu
     private int indexLimit; // The length of the menu array
-    private bool acceptingInput = true; // Used for the keypress delay (Holding the button scrolls down, waits, & repeats)
+    //private bool acceptingInput = true; // Used for the keypress delay (Holding the button scrolls down, waits, & repeats)
 
 
     //=-----------------=
