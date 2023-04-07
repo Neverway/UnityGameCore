@@ -11291,7 +11291,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 2038872637}
+      - m_Target: {fileID: 1749116533}
         m_TargetAssemblyTypeName: UI_MenuScroll, Assembly-CSharp
         m_MethodName: Activate
         m_Mode: 1
@@ -11302,6 +11302,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1749116532}
+        m_TargetAssemblyTypeName: UI_Menu, Assembly-CSharp
+        m_MethodName: SetFocus
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &471171975
 MonoBehaviour:
@@ -48366,6 +48378,8 @@ GameObject:
   - component: {fileID: 1749116529}
   - component: {fileID: 1749116530}
   - component: {fileID: 1749116531}
+  - component: {fileID: 1749116532}
+  - component: {fileID: 1749116533}
   m_Layer: 0
   m_Name: '[Options]'
   m_TagString: Untagged
@@ -48446,6 +48460,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 549b84953554a157688e4ed0cb77d9a7, type: 2}
   displayResolutionDropdown: {fileID: 1994159302}
+--- !u!114 &1749116532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749116527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95eb9fe2f309c2d60a9b395eced773f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnMenuClosed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2031746685}
+        m_TargetAssemblyTypeName: UI_MenuScroll, Assembly-CSharp
+        m_MethodName: Activate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1749116533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749116527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe01f7bb5dff09cf97b143b9c768fef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activateOnStart: 1
+  firstButton: {fileID: 1212204953}
 --- !u!1 &1749480091
 GameObject:
   m_ObjectHideFlags: 0
@@ -57833,7 +57888,6 @@ GameObject:
   - component: {fileID: 2038872635}
   - component: {fileID: 2038872634}
   - component: {fileID: 2038872636}
-  - component: {fileID: 2038872637}
   m_Layer: 0
   m_Name: '[Actions]'
   m_TagString: Untagged
@@ -57929,20 +57983,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &2038872637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2038872631}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fe01f7bb5dff09cf97b143b9c768fef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activateOnStart: 0
-  firstButton: {fileID: 1212204953}
 --- !u!1 &2039985094
 GameObject:
   m_ObjectHideFlags: 0
@@ -62124,6 +62164,7 @@ GameObject:
   - component: {fileID: 4034340524886857604}
   - component: {fileID: 8305184989444039946}
   - component: {fileID: 3704747656126903007}
+  - component: {fileID: 8305184989444039949}
   m_Layer: 0
   m_Name: System Manager
   m_TagString: Untagged
@@ -62206,6 +62247,19 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!114 &8305184989444039949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7517451045902826202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00ddcf610f78b1c0e9ee9ae87621fbc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  focusedMenu: {fileID: 0}
 --- !u!212 &8859083581042541722
 SpriteRenderer:
   m_ObjectHideFlags: 0
