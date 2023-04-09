@@ -150,7 +150,6 @@ public class Options_ApplicaitonSettings : MonoBehaviour
 
     public void SetDisplayResolution(int _resolutionIndex)
     {
-        print("2");
         applicationSettings.currentSettings.displayResolution = _resolutionIndex;
         applicationSettings.UpdateApplicationSetting("displayResolution");
     }

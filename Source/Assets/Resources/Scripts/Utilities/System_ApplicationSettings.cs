@@ -40,10 +40,10 @@ public class System_ApplicationSettings : MonoBehaviour
     //=-----------------=
     private void Start()
     {
-	    LoadApplicationSettings();
 	    // load the stored settings here
 	    supportedResolutions = Screen.resolutions;
 	    defaultSettings.displayResolution = supportedResolutions.Length-1;
+	    LoadApplicationSettings();
 	    UpdateApplicationSetting("all");
     }
     
@@ -204,7 +204,6 @@ public class System_ApplicationSettings : MonoBehaviour
 	    // Graphics
 	    if (_settingID is "displayResolution" or "all")
 	    {
-		    print("1");
 		    Resolution resolution = supportedResolutions[currentSettings.displayResolution];
 		    Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreenMode);
 	    }
