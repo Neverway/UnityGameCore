@@ -86,8 +86,7 @@ public class Options_ApplicaitonSettings : MonoBehaviour
     private void GetCurrentSettings()
     {
         // Graphics
-        if (displayResolution)
-            print("3"); displayResolution.value = applicationSettings.currentSettings.displayResolution;
+        if (displayResolution) displayResolution.value = applicationSettings.currentSettings.displayResolution;
         if (windowMode) windowMode.value = applicationSettings.currentSettings.windowMode;
         if (fpsCounter) fpsCounter.value = applicationSettings.currentSettings.fpsCounter;
         if (fpsLimit) fpsLimit.value = applicationSettings.currentSettings.fpsLimit;
