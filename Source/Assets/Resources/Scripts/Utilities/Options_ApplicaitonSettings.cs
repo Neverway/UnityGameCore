@@ -174,9 +174,8 @@ public class Options_ApplicaitonSettings : MonoBehaviour
 
     public void SetBrightness(float _level)
     {
-        // This didn't do what we needed, please implement this at some point:
-        // https://youtu.be/XiJ-kb-NvV4
-        // Screen.brightness = _level;
+        applicationSettings.currentSettings.brightness = _level;
+        applicationSettings.UpdateApplicationSetting("brightness");
     }
     
     public void SetVolumeChannelTarget(string _channel)

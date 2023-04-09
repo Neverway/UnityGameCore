@@ -12,6 +12,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Rendering.PostProcessing;
 
 public class System_ApplicationSettings : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class System_ApplicationSettings : MonoBehaviour
     //=-----------------=
     // Reference Variables
     //=-----------------=
+    [SerializeField] private PostProcessProfile brightnessProfile;
 
 
     //=-----------------=
@@ -227,6 +229,12 @@ public class System_ApplicationSettings : MonoBehaviour
 	    if (_settingID is "fpsLimit" or "all")
 	    {
 		    Application.targetFrameRate = Mathf.RoundToInt(currentSettings.fpsLimit);
+	    }
+	    
+	    if (_settingID is "brightness" or "all")
+	    {
+		    var screenBrightness = (currentSettings.brightness/20)-5;
+		    brightnessProfile.GetSetting<ColorGrading>().postExposure.value = screenBrightness;
 	    }
 	    
 	    if (_settingID is "volume" or "all")
