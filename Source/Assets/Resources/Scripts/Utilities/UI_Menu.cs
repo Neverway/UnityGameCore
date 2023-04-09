@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 public class UI_Menu : MonoBehaviour
 {
@@ -37,8 +38,18 @@ public class UI_Menu : MonoBehaviour
         }
     }
 
+    public void OpenMenu()
+    {
+        if (!menuManager) menuManager = FindObjectOfType<System_MenuManager>();
+        if (gameObject.GetComponent<UI_MenuScroll>()) gameObject.GetComponent<UI_MenuScroll>().Activate();
+        else EventSystem.current.SetSelectedGameObject(null);
+        gameObject.SetActive(true);
+        menuManager.focusedMenu = gameObject;
+    }
+
     public void CloseMenu()
     {
+        if (!menuManager) menuManager = FindObjectOfType<System_MenuManager>();
         if (menuManager.focusedMenu != gameObject) return;
         OnMenuClosed.Invoke();
         gameObject.SetActive(false);

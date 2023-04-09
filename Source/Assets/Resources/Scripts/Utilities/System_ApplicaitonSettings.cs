@@ -32,6 +32,7 @@ public class System_ApplicaitonSettings : MonoBehaviour
     // Reference Variables
     //=-----------------=
     private System_ButtonHintManager buttonHintManager;
+    private UI_Debug_FPS fpsCounter;
     [SerializeField] private TMP_Dropdown displayResolutionDropdown;
 
 
@@ -41,6 +42,7 @@ public class System_ApplicaitonSettings : MonoBehaviour
     private void Start()
     {
 	    buttonHintManager = FindObjectOfType<System_ButtonHintManager>();
+	    fpsCounter = FindObjectOfType<UI_Debug_FPS>();
 	    supportedResolutions = Screen.resolutions;
 	    displayResolutionDropdown.ClearOptions();
 	    List<string> options = new List<string>();
@@ -107,6 +109,21 @@ public class System_ApplicaitonSettings : MonoBehaviour
 		    buttonHintManager.showButtonHints = false;
 	    else
 		    buttonHintManager.showButtonHints = true;
+    }
+
+    public void SetFPSCounterVisibility(int _value)
+    {
+	    fpsCounter.ShowFPSCounter(_value);
+    }
+
+    public void SetFpsLimit(float _limit)
+    {
+	    Application.targetFrameRate = Mathf.RoundToInt(_limit);
+    }
+
+    public void SetBrightness(float _level)
+    {
+	    Screen.brightness = _level;
     }
 }
 
