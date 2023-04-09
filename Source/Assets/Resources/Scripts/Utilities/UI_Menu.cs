@@ -9,6 +9,7 @@ public class UI_Menu : MonoBehaviour
     private Input_Actions.MenuActions action;
     private System_MenuManager menuManager;
     public UnityEvent OnMenuClosed;
+    public UnityEvent OnMenuApply;
     
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,10 @@ public class UI_Menu : MonoBehaviour
         if (action.Close.IsPressed())
         {
             CloseMenu();
+        }
+        if (action.Apply.IsPressed())
+        {
+            OnMenuApply.Invoke();
         }
     }
     
