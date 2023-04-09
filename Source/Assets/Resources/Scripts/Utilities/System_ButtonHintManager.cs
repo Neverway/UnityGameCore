@@ -16,6 +16,7 @@ public class System_ButtonHintManager : MonoBehaviour
     //=-----------------=
     // Public Variables
     //=-----------------=
+    public bool showButtonHints;
     public ButtonInput[] buttonInputs;
 
 
@@ -41,7 +42,25 @@ public class System_ButtonHintManager : MonoBehaviour
 	    player2DActions = new Input_Actions().Player2D;
 	    player3DActions = new Input_Actions().Player3D;
     }
-    
+
+    private void Update()
+    {
+	    if (showButtonHints)
+	    {
+		    foreach (var hint in FindObjectsOfType<UI_Image_ButtonHint>(true))
+		    {
+			    hint.gameObject.SetActive(true);
+		    }
+	    }
+	    if (!showButtonHints)
+	    {
+		    foreach (var hint in FindObjectsOfType<UI_Image_ButtonHint>(true))
+		    {
+			    hint.gameObject.SetActive(false);
+		    }
+	    }
+    }
+
     //=-----------------=
     // Internal Functions
     //=-----------------=

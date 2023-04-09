@@ -10,7 +10,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UI_ButtonHint : MonoBehaviour
+public class UI_Image_ButtonHint : MonoBehaviour
 {
     //=-----------------=
     // Public Variables
@@ -30,7 +30,7 @@ public class UI_ButtonHint : MonoBehaviour
     // Reference Variables
     //=-----------------=
     private System_ButtonHintManager buttonHintManager;
-    private Image bindingIcon;
+    [SerializeField] private Image bindingIcon;
 
 
     //=-----------------=
@@ -44,7 +44,7 @@ public class UI_ButtonHint : MonoBehaviour
     private void Update()
     {
         if (targetActionMap == "" || targetAction == "") return;
-        bindingIcon = gameObject.GetComponent<Image>();
+        if (!bindingIcon) bindingIcon = gameObject.GetComponent<Image>();
         var targetBindingIcon = buttonHintManager.GetBindingIcon(targetInputDevice, targetActionMap, targetAction);
         if (bindingIcon && targetBindingIcon) bindingIcon.sprite = targetBindingIcon;
     }

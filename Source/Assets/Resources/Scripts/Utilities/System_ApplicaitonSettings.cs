@@ -31,6 +31,7 @@ public class System_ApplicaitonSettings : MonoBehaviour
     //=-----------------=
     // Reference Variables
     //=-----------------=
+    private System_ButtonHintManager buttonHintManager;
     [SerializeField] private TMP_Dropdown displayResolutionDropdown;
 
 
@@ -39,6 +40,7 @@ public class System_ApplicaitonSettings : MonoBehaviour
     //=-----------------=
     private void Start()
     {
+	    buttonHintManager = FindObjectOfType<System_ButtonHintManager>();
 	    supportedResolutions = Screen.resolutions;
 	    displayResolutionDropdown.ClearOptions();
 	    List<string> options = new List<string>();
@@ -97,6 +99,14 @@ public class System_ApplicaitonSettings : MonoBehaviour
     {
 	    Resolution resolution = supportedResolutions[_resolutionIndex];
 	    Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreenMode);
+    }
+
+    public void SetButtonHintVisibility(int _hintsEnabled)
+    {
+	    if (_hintsEnabled == 0)
+		    buttonHintManager.showButtonHints = false;
+	    else
+		    buttonHintManager.showButtonHints = true;
     }
 }
 
