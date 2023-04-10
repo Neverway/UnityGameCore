@@ -17,6 +17,7 @@ public class UI_Image_ButtonHint : MonoBehaviour
     //=-----------------=
     [SerializeField] private string targetActionMap;
     [SerializeField] private string targetAction;
+    public bool exemptFromHidingHints;
     [Header("0 = Active input device, 1 = Keyboard, 2 = Gamepad")]
     [Range(0,2)] [SerializeField] private int targetInputDevice;
 

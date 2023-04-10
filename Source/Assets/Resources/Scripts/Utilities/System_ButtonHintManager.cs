@@ -56,7 +56,10 @@ public class System_ButtonHintManager : MonoBehaviour
 	    {
 		    foreach (var hint in FindObjectsOfType<UI_Image_ButtonHint>(true))
 		    {
-			    hint.gameObject.SetActive(false);
+			    if (!hint.exemptFromHidingHints)
+			    {
+				    hint.gameObject.SetActive(false);
+			    }
 		    }
 	    }
     }
