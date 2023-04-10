@@ -26,7 +26,7 @@ public class UI_Debug_FPS : MonoBehaviour
     private float updateRate = 1f;
     private float time;
     private float frameCount;
-    private bool enabled;
+    private bool active;
     
     
     //=-----------------=
@@ -45,7 +45,7 @@ public class UI_Debug_FPS : MonoBehaviour
 
     private void Update()
     {
-	    if (!enabled) return;
+	    if (!active) return;
 	    time += Time.deltaTime;
 	    frameCount++;
 	    if (time >= updateRate)
@@ -72,13 +72,13 @@ public class UI_Debug_FPS : MonoBehaviour
 	    {
 		    GetComponent<Image>().enabled = false;
 		    fpsCounterText.gameObject.SetActive(false);
-		    enabled = false;
+		    active = false;
 	    }
 	    else
 	    {
 		    GetComponent<Image>().enabled = true;
 		    fpsCounterText.gameObject.SetActive(true);
-		    enabled = true;
+		    active = true;
 	    }
     }
 }

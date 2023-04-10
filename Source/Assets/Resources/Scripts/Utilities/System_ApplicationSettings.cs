@@ -237,6 +237,38 @@ public class System_ApplicationSettings : MonoBehaviour
 		    overlayProfile.GetSetting<ColorGrading>().postExposure.value = screenBrightness;
 	    }
 	    
+	    if (_settingID is "shadowQuality" or "all")
+	    {
+		    switch (currentSettings.shadowQuality)
+		    {
+			    case 0:
+				    QualitySettings.shadowResolution = (ShadowResolution)0;
+				    QualitySettings.shadows = (ShadowQuality)0;
+				    QualitySettings.shadowDistance = 10;
+				    break;
+			    case 1:
+				    QualitySettings.shadowResolution = (ShadowResolution)1;
+				    QualitySettings.shadows = (ShadowQuality)1;
+				    QualitySettings.shadowDistance = 20;
+				    break;
+			    case 2:
+				    QualitySettings.shadowResolution = (ShadowResolution)2;
+				    QualitySettings.shadows = (ShadowQuality)2;
+				    QualitySettings.shadowDistance = 20;
+				    break;
+			    case 3:
+				    QualitySettings.shadowResolution = (ShadowResolution)3;
+				    QualitySettings.shadows = (ShadowQuality)3;
+				    QualitySettings.shadowDistance = 40;
+				    break;
+			    case 4:
+				    QualitySettings.shadowResolution = (ShadowResolution)3;
+				    QualitySettings.shadows = (ShadowQuality)3;
+				    QualitySettings.shadowDistance = 150;
+				    break;
+		    }
+	    }
+	    
 	    if (_settingID is "antiAliasing" or "all")
 	    {
 		    // 0=NoMSAA, 1=2x, 2=4x, 3=8x
@@ -260,7 +292,25 @@ public class System_ApplicationSettings : MonoBehaviour
 	    if (_settingID is "levelOfDetail" or "all")
 	    {
 		    QualitySettings.SetLODSettings(QualitySettings.lodBias, currentSettings.levelOfDetail);
-		    print(QualitySettings.maximumLODLevel);
+	    }
+	    
+	    if (_settingID is "ambientOcclusion" or "all")
+	    {
+		    switch (currentSettings.ambientOcclusion)
+		    {
+			    case 0:
+				    overlayProfile.GetSetting<AmbientOcclusion>().intensity.value = 0f;
+				    break;
+			    case 1:
+				    overlayProfile.GetSetting<AmbientOcclusion>().intensity.value = 25f;
+				    break;
+			    case 2:
+				    overlayProfile.GetSetting<AmbientOcclusion>().intensity.value = 50f;
+				    break;
+			    case 3:
+				    overlayProfile.GetSetting<AmbientOcclusion>().intensity.value = 100f;
+				    break;
+		    }
 	    }
 	    
 	    if (_settingID is "bloom" or "all")

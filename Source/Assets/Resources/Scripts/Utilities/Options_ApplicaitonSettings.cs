@@ -177,6 +177,12 @@ public class Options_ApplicaitonSettings : MonoBehaviour
         applicationSettings.UpdateApplicationSetting("brightness");
     }
 
+    public void SetShadowQuality(int _value)
+    {
+        applicationSettings.currentSettings.shadowQuality = _value;
+        applicationSettings.UpdateApplicationSetting("shadowQuality");
+    }
+
     public void SetAntiAliasing(int _value)
     {
         applicationSettings.currentSettings.antiAliasing = _value;
@@ -187,6 +193,12 @@ public class Options_ApplicaitonSettings : MonoBehaviour
     {
         applicationSettings.currentSettings.levelOfDetail = _value;
         applicationSettings.UpdateApplicationSetting("levelOfDetail");
+    }
+
+    public void SetAmbientOcclusion(int _value)
+    {
+        applicationSettings.currentSettings.ambientOcclusion = _value;
+        applicationSettings.UpdateApplicationSetting("ambientOcclusion");
     }
 
     public void SetBloom(int _value)
