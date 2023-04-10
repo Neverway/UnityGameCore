@@ -326,7 +326,7 @@ public class System_ApplicationSettings : MonoBehaviour
 				case 1:
 					overlayProfile.GetSetting<Bloom>().intensity.value = 3f;
 					overlayProfile.GetSetting<Bloom>().softKnee.value = 0.5f;
-					overlayProfile.GetSetting<Bloom>().diffusion.value = 7f;
+					overlayProfile.GetSetting<Bloom>().diffusion.value = 5f;
 					break;
 				case 2:
 					overlayProfile.GetSetting<Bloom>().intensity.value = 8f;
