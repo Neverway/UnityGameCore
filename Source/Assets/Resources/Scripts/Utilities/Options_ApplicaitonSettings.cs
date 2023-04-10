@@ -176,6 +176,30 @@ public class Options_ApplicaitonSettings : MonoBehaviour
         applicationSettings.currentSettings.brightness = _level;
         applicationSettings.UpdateApplicationSetting("brightness");
     }
+
+    public void SetAntiAliasing(int _value)
+    {
+        applicationSettings.currentSettings.antiAliasing = _value;
+        applicationSettings.UpdateApplicationSetting("antiAliasing");
+    }
+
+    public void SetLevelOfDetail(int _value)
+    {
+        applicationSettings.currentSettings.levelOfDetail = _value;
+        applicationSettings.UpdateApplicationSetting("levelOfDetail");
+    }
+
+    public void SetBloom(int _value)
+    {
+        applicationSettings.currentSettings.bloom = _value;
+        applicationSettings.UpdateApplicationSetting("bloom");
+    }
+
+    public void SetMotionBlur(int _value)
+    {
+        applicationSettings.currentSettings.motionBlur = _value;
+        applicationSettings.UpdateApplicationSetting("motionBlur");
+    }
     
     public void SetVolumeChannelTarget(string _channel)
     {

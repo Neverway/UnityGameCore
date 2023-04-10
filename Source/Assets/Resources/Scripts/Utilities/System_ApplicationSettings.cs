@@ -34,7 +34,7 @@ public class System_ApplicationSettings : MonoBehaviour
     //=-----------------=
     // Reference Variables
     //=-----------------=
-    [SerializeField] private PostProcessProfile brightnessProfile;
+    [SerializeField] private PostProcessProfile overlayProfile;
 
 
     //=-----------------=
@@ -234,7 +234,61 @@ public class System_ApplicationSettings : MonoBehaviour
 	    if (_settingID is "brightness" or "all")
 	    {
 		    var screenBrightness = (currentSettings.brightness/20)-5;
-		    brightnessProfile.GetSetting<ColorGrading>().postExposure.value = screenBrightness;
+		    overlayProfile.GetSetting<ColorGrading>().postExposure.value = screenBrightness;
+	    }
+	    
+	    if (_settingID is "antiAliasing" or "all")
+	    {
+		    // 0=NoMSAA, 1=2x, 2=4x, 3=8x
+		    switch (currentSettings.antiAliasing)
+		    {
+			    case 0:
+				    QualitySettings.antiAliasing = 0;
+				    break;
+			    case 1:
+				    QualitySettings.antiAliasing = 2;
+				    break;
+			    case 2:
+				    QualitySettings.antiAliasing = 4;
+				    break;
+			    case 3:
+				    QualitySettings.antiAliasing = 8;
+				    break;
+		    }
+	    }
+	    
+	    if (_settingID is "levelOfDetail" or "all")
+	    {
+		    QualitySettings.SetLODSettings(QualitySettings.lodBias, currentSettings.levelOfDetail);
+		    print(QualitySettings.maximumLODLevel);
+	    }
+	    
+	    if (_settingID is "bloom" or "all")
+	    {
+			if (!overlayProfile.GetSetting<Bloom>()) return;
+			switch (currentSettings.bloom)
+			{
+				case 0:
+					overlayProfile.GetSetting<Bloom>().intensity.value = 0f;
+					overlayProfile.GetSetting<Bloom>().softKnee.value = 0f;
+					overlayProfile.GetSetting<Bloom>().diffusion.value = 0f;
+					break;
+				case 1:
+					overlayProfile.GetSetting<Bloom>().intensity.value = 3f;
+					overlayProfile.GetSetting<Bloom>().softKnee.value = 0.5f;
+					overlayProfile.GetSetting<Bloom>().diffusion.value = 7f;
+					break;
+				case 2:
+					overlayProfile.GetSetting<Bloom>().intensity.value = 8f;
+					overlayProfile.GetSetting<Bloom>().softKnee.value = 0.5f;
+					overlayProfile.GetSetting<Bloom>().diffusion.value = 7f;
+					break;
+				case 3:
+					overlayProfile.GetSetting<Bloom>().intensity.value = 25f;
+					overlayProfile.GetSetting<Bloom>().softKnee.value = 0.38f;
+					overlayProfile.GetSetting<Bloom>().diffusion.value = 3.3f;
+					break;
+			}
 	    }
 	    
 	    if (_settingID is "volume" or "all")
