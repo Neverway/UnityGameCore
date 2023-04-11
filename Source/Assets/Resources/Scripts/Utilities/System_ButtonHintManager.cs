@@ -31,7 +31,8 @@ public class System_ButtonHintManager : MonoBehaviour
     private Input_Actions.MenuActions menuActions;
     private Input_Actions.Player2DActions player2DActions;
     private Input_Actions.Player3DActions player3DActions;
-
+    public Sprite rebindingSprite;
+    
 
     //=-----------------=
     // Mono Functions
