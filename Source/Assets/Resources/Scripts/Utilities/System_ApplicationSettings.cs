@@ -1,15 +1,11 @@
 //========== Neverway 2022 Project Script | Written by Unknown Dev ============
 // 
-// Purpose: 
-// Applied to: 
-// Editor script: 
-// Notes: 
+// Purpose: Handle functions for changing application settings
+// Applied to: Persistent System Manager
 //
 //=============================================================================
 
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Rendering.PostProcessing;
@@ -22,7 +18,6 @@ public class System_ApplicationSettings : MonoBehaviour
     public AudioMixer audioMixer;
     public AppSettings defaultSettings;
     public AppSettings currentSettings;
-    public AppSettings savedSettings;
 
 
     //=-----------------=
@@ -42,12 +37,12 @@ public class System_ApplicationSettings : MonoBehaviour
     //=-----------------=
     private void Start()
     {
-	    // load the stored settings here
 	    supportedResolutions = Screen.resolutions;
 	    defaultSettings.displayResolution = supportedResolutions.Length-1;
 	    LoadApplicationSettings();
 	    UpdateApplicationSetting("all");
     }
+    
     
     //=-----------------=
     // Internal Functions
@@ -86,6 +81,7 @@ public class System_ApplicationSettings : MonoBehaviour
 	    public int buttonHints;
 	    public int gameChat;
     }
+    
     // Fires when first loading the options menu in a scene
     private void LoadApplicationSettings()
     {
@@ -122,46 +118,8 @@ public class System_ApplicationSettings : MonoBehaviour
 	    
 	    PlayerPrefs.Save();
     }
-
-/*
-    // Fires when first loading the options menu in a scene
-    private void SaveCurrentSettings()
-    {
-	    // Graphics
-	    PlayerPrefs.SetInt("displayResolution", currentSettings.displayResolution);
-	    PlayerPrefs.SetInt("windowMode", currentSettings.windowMode);
-	    PlayerPrefs.SetInt("fpsCounter", currentSettings.fpsCounter);
-	    PlayerPrefs.SetFloat("fpsLimit", currentSettings.fpsLimit);
-	    PlayerPrefs.SetFloat("brightness", currentSettings.brightness);
-	    // Quality
-	    PlayerPrefs.SetInt("lightingQuality", currentSettings.lightingQuality);
-	    PlayerPrefs.SetInt("shadowQuality", currentSettings.shadowQuality);
-	    PlayerPrefs.SetInt("textureQuality", currentSettings.textureQuality);
-	    PlayerPrefs.SetInt("postProcessingQuality", currentSettings.postProcessingQuality);
-	    PlayerPrefs.SetInt("antiAliasing", currentSettings.antiAliasing);
-	    PlayerPrefs.SetInt("levelOfDetail", currentSettings.levelOfDetail);
-	    PlayerPrefs.SetInt("ambientOcclusion", currentSettings.ambientOcclusion);
-	    PlayerPrefs.SetInt("bloom", currentSettings.bloom);
-	    PlayerPrefs.SetInt("motionBlur", currentSettings.motionBlur);
-	    // Sound
-	    PlayerPrefs.SetFloat("master", currentSettings.master);
-	    PlayerPrefs.SetFloat("music", currentSettings.music);
-	    PlayerPrefs.SetFloat("soundEffects", currentSettings.soundEffects);
-	    PlayerPrefs.SetFloat("voiceChat", currentSettings.voiceChat);
-	    PlayerPrefs.SetFloat("characterChatter", currentSettings.characterChatter);
-	    PlayerPrefs.SetFloat("ambient", currentSettings.ambient);
-	    PlayerPrefs.SetFloat("menus", currentSettings.menus);
-	    // Gameplay
-	    PlayerPrefs.SetFloat("verticalLookSensitivity", currentSettings.verticalLookSensitivity);
-	    PlayerPrefs.SetFloat("horizontalLookSensitivity", currentSettings.horizontalLookSensitivity);
-	    PlayerPrefs.SetFloat("fieldOfView", currentSettings.fieldOfView);
-	    PlayerPrefs.SetInt("buttonHints", currentSettings.buttonHints);
-	    PlayerPrefs.SetInt("gameChat", currentSettings.gameChat);
-	    
-	    PlayerPrefs.Save();
-	    LoadSavedSettings();
-    }
-*/
+    
+    
     //=-----------------=
     // External Functions
     //=-----------------=
@@ -203,7 +161,6 @@ public class System_ApplicationSettings : MonoBehaviour
     
     public void UpdateApplicationSetting(string _settingID)
     {
-	    // Graphics
 	    if (_settingID is "displayResolution" or "all")
 	    {
 		    Resolution resolution = supportedResolutions[currentSettings.displayResolution];

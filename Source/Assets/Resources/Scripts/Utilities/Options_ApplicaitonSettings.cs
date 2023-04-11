@@ -1,17 +1,13 @@
 //========== Neverway 2022 Project Script | Written by Unknown Dev ============
 // 
-// Purpose: 
-// Applied to: 
-// Editor script: 
-// Notes: 
+// Purpose: Pass UI events to modify the System_ApplicationSettings values
+// Applied to: The root of the options menu
 //
 //=============================================================================
 
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class Options_ApplicaitonSettings : MonoBehaviour
@@ -34,35 +30,35 @@ public class Options_ApplicaitonSettings : MonoBehaviour
     private System_ApplicationSettings applicationSettings;
     private UI_Debug_FPS fpsCounterElement;
     [Header("Graphics")]
-    public TMP_Dropdown displayResolution;
-    public TMP_Dropdown windowMode;
-    public TMP_Dropdown fpsCounter;
-    public Slider fpsLimit;
-    public Slider brightness;
+    [SerializeField] private TMP_Dropdown displayResolution;
+    [SerializeField] private TMP_Dropdown windowMode;
+    [SerializeField] private TMP_Dropdown fpsCounter;
+    [SerializeField] private Slider fpsLimit;
+    [SerializeField] private Slider brightness;
     [Header("Quality")]
-    public TMP_Dropdown lightingQuality;
-    public TMP_Dropdown shadowQuality;
-    public TMP_Dropdown textureQuality;
-    public TMP_Dropdown postProcessingQuality;
-    public TMP_Dropdown antiAliasing;
-    public TMP_Dropdown levelOfDetail;
-    public TMP_Dropdown ambientOcclusion;
-    public TMP_Dropdown bloom;
-    public TMP_Dropdown motionBlur;
+    [SerializeField] private TMP_Dropdown lightingQuality;
+    [SerializeField] private TMP_Dropdown shadowQuality;
+    [SerializeField] private TMP_Dropdown textureQuality;
+    [SerializeField] private TMP_Dropdown postProcessingQuality;
+    [SerializeField] private TMP_Dropdown antiAliasing;
+    [SerializeField] private TMP_Dropdown levelOfDetail;
+    [SerializeField] private TMP_Dropdown ambientOcclusion;
+    [SerializeField] private TMP_Dropdown bloom;
+    [SerializeField] private TMP_Dropdown motionBlur;
     [Header("Sound")]
-    public Slider master;
-    public Slider music;
-    public Slider soundEffects;
-    public Slider voiceChat;
-    public Slider characterChatter;
-    public Slider ambient;
-    public Slider menus;
+    [SerializeField] private Slider master;
+    [SerializeField] private Slider music;
+    [SerializeField] private Slider soundEffects;
+    [SerializeField] private Slider voiceChat;
+    [SerializeField] private Slider characterChatter;
+    [SerializeField] private Slider ambient;
+    [SerializeField] private Slider menus;
     [Header("Gameplay")] 
-    public Slider verticalLookSensitivity;
-    public Slider horizontalLookSensitivity;
-    public Slider fieldOfView;
-    public TMP_Dropdown buttonHints;
-    public TMP_Dropdown gameChat;
+    [SerializeField] private Slider verticalLookSensitivity;
+    [SerializeField] private Slider horizontalLookSensitivity;
+    [SerializeField] private Slider fieldOfView;
+    [SerializeField] private TMP_Dropdown buttonHints;
+    [SerializeField] private TMP_Dropdown gameChat;
 
 
     //=-----------------=
@@ -74,11 +70,7 @@ public class Options_ApplicaitonSettings : MonoBehaviour
         if (displayResolution) GetSupportedDisplayResolutions();
         GetCurrentSettings();
     }
-
-    private void Update()
-    {
-	
-    }
+    
     
     //=-----------------=
     // Internal Functions
@@ -127,11 +119,7 @@ public class Options_ApplicaitonSettings : MonoBehaviour
         {
             string option = supportedResolutions[i].width + " x " + supportedResolutions[i].height;
             options.Add(option);
-            if (supportedResolutions[i].width == Screen.currentResolution.width &&
-                supportedResolutions[i].height == Screen.currentResolution.height)
-            {
-                currentResolutionIndex = i;
-            }
+            if (supportedResolutions[i].width == Screen.currentResolution.width && supportedResolutions[i].height == Screen.currentResolution.height) currentResolutionIndex = i;
         }
         displayResolution.AddOptions(options);
         displayResolution.value = currentResolutionIndex;
