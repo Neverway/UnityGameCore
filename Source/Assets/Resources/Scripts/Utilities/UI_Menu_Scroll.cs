@@ -1,14 +1,10 @@
 //========== Neverway 2022 Project Script | Written by Unknown Dev ============
 // 
-// Purpose: 
-// Applied to: 
-// Editor script: 
-// Notes: 
+// Purpose: Set Selected UI option for button based menu navigation
+// Applied to: The root of a UI menu
 //
 //=============================================================================
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -39,6 +35,7 @@ public class UI_MenuScroll : MonoBehaviour
 	    if (activateOnStart) Activate();
     }
     
+    
     //=-----------------=
     // Internal Functions
     //=-----------------=
@@ -51,11 +48,6 @@ public class UI_MenuScroll : MonoBehaviour
     {
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(firstButton);
-    }
-    
-    public void Deactivate()
-    {
-        //EventSystem.current.SetSelectedGameObject(null);
     }
 }
 

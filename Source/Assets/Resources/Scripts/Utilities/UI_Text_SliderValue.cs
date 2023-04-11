@@ -42,6 +42,7 @@ public class UI_Text_SliderValue : MonoBehaviour
 	    tmpText.text = (slider.value + offset).ToString();
     }
     
+    
     //=-----------------=
     // Internal Functions
     //=-----------------=

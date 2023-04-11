@@ -1,16 +1,13 @@
 //========== Neverway 2022 Project Script | Written by Unknown Dev ============
 // 
-// Purpose: 
-// Applied to: 
-// Editor script: 
-// Notes: 
+// Purpose: Rebind an action to the next pressed input
+// Applied to: Binding image in a input binding menu
+// Notes: Currently unused (WIP)
 //
 //=============================================================================
 
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class UI_Controls_Keybind : MonoBehaviour
@@ -61,7 +58,7 @@ public class UI_Controls_Keybind : MonoBehaviour
     private IEnumerator WaitingForInput()
     {
 	    yield return new WaitForSeconds(0.2f);
-	    
+	    // Insert key detection here
     }
     
     

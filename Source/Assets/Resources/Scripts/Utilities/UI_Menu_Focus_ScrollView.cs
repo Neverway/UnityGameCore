@@ -2,17 +2,13 @@
 // 
 // Purpose: 
 // Applied to: 
-// Editor script: 
-// Notes:
 //
 //=============================================================================
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
 using UnityEngine.EventSystems;
 
 public class UI_Menu_Focus_ScrollView : MonoBehaviour
@@ -23,7 +19,6 @@ public class UI_Menu_Focus_ScrollView : MonoBehaviour
     [Tooltip("The selectable ui elements and their corresponding target that should be autofocused to")]
     public List<FocusableElement> focusableElements;
     
-
 
     //=-----------------=
     // Private Variables
@@ -61,6 +56,7 @@ public class UI_Menu_Focus_ScrollView : MonoBehaviour
     {
         UpdateFocus();
     }
+    
     
     //=-----------------=
     // Internal Functions

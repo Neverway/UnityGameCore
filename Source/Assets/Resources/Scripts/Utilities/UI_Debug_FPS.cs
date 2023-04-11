@@ -1,14 +1,9 @@
 //========== Neverway 2022 Project Script | Written by Unknown Dev ============
 // 
-// Purpose: 
-// Applied to: 
-// Editor script: 
-// Notes: 
+// Purpose: Output the frames per second to a TMP_Text component
 //
 //=============================================================================
 
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -38,11 +33,6 @@ public class UI_Debug_FPS : MonoBehaviour
     //=-----------------=
     // Mono Functions
     //=-----------------=
-    private void Start()
-    {
-	
-    }
-
     private void Update()
     {
 	    if (!active) return;
@@ -51,12 +41,13 @@ public class UI_Debug_FPS : MonoBehaviour
 	    if (time >= updateRate)
 	    {
 		    int frameRate = Mathf.RoundToInt(frameCount / time);
-		    fpsCounterText.text = frameRate.ToString() + " FPS";
+		    fpsCounterText.text = frameRate + " FPS";
 
 		    time -= updateRate;
 		    frameCount = 0;
 	    }
     }
+    
     
     //=-----------------=
     // Internal Functions

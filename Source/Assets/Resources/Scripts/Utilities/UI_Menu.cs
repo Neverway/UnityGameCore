@@ -1,5 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
+//========== Neverway 2022 Project Script | Written by Unknown Dev ============
+// 
+// Purpose: 
+// Applied to: 
+//
+//=============================================================================
+
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
@@ -11,7 +16,6 @@ public class UI_Menu : MonoBehaviour
     public UnityEvent OnMenuClosed;
     public UnityEvent OnMenuApply;
     
-    // Start is called before the first frame update
     void Start()
     {
         menuManager = FindObjectOfType<System_MenuManager>();
@@ -19,7 +23,6 @@ public class UI_Menu : MonoBehaviour
         action.Enable();
     }
 
-    // Update is called once per frame
     void Update()
     {
         // Close this menu if it's in focus

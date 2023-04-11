@@ -1,9 +1,6 @@
 //========== Neverway 2022 Project Script | Written by Unknown Dev ============
 // 
-// Purpose: 
-// Applied to: 
-// Editor script: 
-// Notes: 
+// Purpose: Set a UI image to the current keybind for an Input action for a specified input device
 //
 //=============================================================================
 
