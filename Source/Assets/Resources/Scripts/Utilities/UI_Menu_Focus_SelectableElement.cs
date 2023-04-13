@@ -1,21 +1,19 @@
 //========== Neverway 2022 Project Script | Written by Unknown Dev ============
 // 
-// Purpose: 
-// Applied to: 
-// Editor script: 
-// Notes: 
+// Purpose: Set the UI element to focus the view on when using UI_Menu_Focus_ScrollView
+// Applied to: A focusable UI option
 //
 //=============================================================================
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class UI_Menu_Navigation : MonoBehaviour
+public class UI_Menu_SelectableFocusElement : MonoBehaviour
 {
     //=-----------------=
     // Public Variables
     //=-----------------=
+    [Header("0 = Self, 1 = Parent")]
+    [Range(0,1)] public int focusTarget;
 
 
     //=-----------------=
@@ -31,23 +29,23 @@ public class UI_Menu_Navigation : MonoBehaviour
     //=-----------------=
     // Mono Functions
     //=-----------------=
-    private void Start()
-    {
-	
-    }
-
-    private void Update()
-    {
-	
-    }
+    
     
     //=-----------------=
     // Internal Functions
     //=-----------------=
-    
-    
+
+
     //=-----------------=
     // External Functions
     //=-----------------=
+    public RectTransform GetFocusTarget()
+    {
+        return focusTarget switch
+        {
+            0 => GetComponent<RectTransform>(),
+            1 => transform.parent.GetComponent<RectTransform>(),
+            _ => null
+        };
+    }
 }
-

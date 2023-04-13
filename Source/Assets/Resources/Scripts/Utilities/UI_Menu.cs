@@ -1,0 +1,66 @@
+//========== Neverway 2022 Project Script | Written by Unknown Dev ============
+// 
+// Purpose: 
+// Applied to: 
+//
+//=============================================================================
+
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
+
+public class UI_Menu : MonoBehaviour
+{
+    private Input_Actions.MenuActions action;
+    private System_MenuManager menuManager;
+    public UnityEvent OnMenuClosed;
+    public UnityEvent OnMenuApply;
+    
+    void Start()
+    {
+        menuManager = FindObjectOfType<System_MenuManager>();
+        action = new Input_Actions().Menu;
+        action.Enable();
+    }
+
+    void Update()
+    {
+        // Close this menu if it's in focus
+        if (action.Close.IsPressed())
+        {
+            CloseMenu();
+        }
+        if (action.Apply.IsPressed())
+        {
+            OnMenuApply.Invoke();
+        }
+    }
+    
+    public void SetFocus(bool _isFocused)
+    {
+        if (!menuManager) menuManager = FindObjectOfType<System_MenuManager>();
+        if (_isFocused) menuManager.SetFocusedMenu(gameObject);
+        else if (menuManager.focusedMenu == gameObject)
+        {
+            menuManager.focusedMenu = null;
+        }
+    }
+
+    public void OpenMenu()
+    {
+        if (!menuManager) menuManager = FindObjectOfType<System_MenuManager>();
+        if (gameObject.GetComponent<UI_MenuScroll>()) gameObject.GetComponent<UI_MenuScroll>().Activate();
+        else EventSystem.current.SetSelectedGameObject(null);
+        gameObject.SetActive(true);
+        menuManager.focusedMenu = gameObject;
+    }
+
+    public void CloseMenu()
+    {
+        if (!menuManager) menuManager = FindObjectOfType<System_MenuManager>();
+        if (menuManager.focusedMenu != gameObject) return;
+        OnMenuClosed.Invoke();
+        gameObject.SetActive(false);
+        menuManager.focusedMenu = null;
+    }
+}

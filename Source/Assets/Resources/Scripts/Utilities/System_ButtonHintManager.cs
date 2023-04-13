@@ -1,9 +1,7 @@
 //========== Neverway 2022 Project Script | Written by Unknown Dev ============
 // 
-// Purpose: 
-// Applied to: 
-// Editor script: 
-// Notes: 
+// Purpose: Handel data to return button sprite for input actions
+// Applied to: Persistent System Manager
 //
 //=============================================================================
 
@@ -16,6 +14,7 @@ public class System_ButtonHintManager : MonoBehaviour
     //=-----------------=
     // Public Variables
     //=-----------------=
+    public bool showButtonHints;
     public ButtonInput[] buttonInputs;
 
 
@@ -30,7 +29,8 @@ public class System_ButtonHintManager : MonoBehaviour
     private Input_Actions.MenuActions menuActions;
     private Input_Actions.Player2DActions player2DActions;
     private Input_Actions.Player3DActions player3DActions;
-
+    public Sprite rebindingSprite;
+    
 
     //=-----------------=
     // Mono Functions
@@ -41,6 +41,24 @@ public class System_ButtonHintManager : MonoBehaviour
 	    player2DActions = new Input_Actions().Player2D;
 	    player3DActions = new Input_Actions().Player3D;
     }
+
+    private void Update()
+    {
+	    switch (showButtonHints)
+	    {
+		    case true:
+		    {
+			    foreach (var hint in FindObjectsOfType<UI_Image_ButtonHint>(true)) hint.gameObject.SetActive(true);
+			    break;
+		    }
+		    case false:
+		    {
+			    foreach (var hint in FindObjectsOfType<UI_Image_ButtonHint>(true)) if (!hint.exemptFromHidingHints) hint.gameObject.SetActive(false);
+			    break;
+		    }
+	    }
+    }
+
     
     //=-----------------=
     // Internal Functions

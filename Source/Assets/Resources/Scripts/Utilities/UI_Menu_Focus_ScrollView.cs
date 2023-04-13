@@ -2,35 +2,29 @@
 // 
 // Purpose: 
 // Applied to: 
-// Editor script: 
-// Notes:
 //
 //=============================================================================
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
 using UnityEngine.EventSystems;
 
-public class UI_Menu_FocusScrollView : MonoBehaviour
+public class UI_Menu_Focus_ScrollView : MonoBehaviour
 {
     //=-----------------=
     // Public Variables
     //=-----------------=
     [Tooltip("The selectable ui elements and their corresponding target that should be autofocused to")]
-    public FocusableElement[] focusableElements;
-    [SerializeField] private bool useContentChildrenAsFocusableElements;
+    public List<FocusableElement> focusableElements;
     
-
 
     //=-----------------=
     // Private Variables
     //=-----------------=
-    private GameObject selectedUIObject;
-    private GameObject previouslySelectedUIObject;
+    private GameObject selectedElement;
+    private GameObject previouslySelectedElement;
     
     
     //=-----------------=
@@ -46,28 +40,23 @@ public class UI_Menu_FocusScrollView : MonoBehaviour
     private void Start()
     {
         scrollRect = GetComponent<ScrollRect>();
-        if (!useContentChildrenAsFocusableElements) return;
-        for (int i = 0; i < contentWindow.childCount; i++)
+
+        var elements = contentWindow.GetComponentsInChildren<UI_Menu_SelectableFocusElement>();
+        focusableElements.Clear();
+        for (int i = 0; i < elements.Length; i++)
         {
-            Array.Resize(ref focusableElements, contentWindow.childCount);
-            if (focusableElements.Length != contentWindow.childCount) return;
-            if (focusableElements[i].selectableElement) 
-                focusableElements[i].selectableElement = contentWindow.GetChild(i).gameObject;
-            if (focusableElements[i].focusTarget) 
-                focusableElements[i].focusTarget = contentWindow.GetChild(i).GetComponent<RectTransform>();
+            focusableElements.Add(new FocusableElement());
+            focusableElements[i].selectableElement = elements[i].gameObject;
+            focusableElements[i].focusTarget = elements[i].GetFocusTarget();
+            // PL->FL: If you implement an auto-populating focus offset, it should probably go here
         }
     }
 
     private void Update()
     {
-        selectedUIObject = EventSystem.current.currentSelectedGameObject;
-        if (selectedUIObject == null) return;
-        if (selectedUIObject != previouslySelectedUIObject)
-        {
-            print("PING!");
-        }
         UpdateFocus();
     }
+    
     
     //=-----------------=
     // Internal Functions
@@ -80,25 +69,28 @@ public class UI_Menu_FocusScrollView : MonoBehaviour
         public float offset;
     }
     
-    // Wouldn't be able to have figured this out on my own! Thanks (stack overflow user) maraaaaaaaa! 
     private void SnapTo(RectTransform target, float _offset)
     {
-        //if (scrollRect.verticalNormalizedPosition >= 1 || scrollRect.verticalNormalizedPosition <= 0) return;
         var pos = (contentWindow.rect.height + target.localPosition.y + _offset) / contentWindow.rect.height;
-        // 1152 / 2
-        print(pos);
         scrollRect.verticalNormalizedPosition = pos;
     }
     
     private void UpdateFocus()
     {
+        // Only update if the value has changed
+        selectedElement = EventSystem.current.currentSelectedGameObject;
+        if (selectedElement == null) return;
+        if (selectedElement == previouslySelectedElement) return;
+        
+        // Foreach selectable element, if the selectedElement == currentSelectableElement, snapto(selectedElement, selectedElement.offset)
+        
+        // Focus the selected element's focus point
         foreach (var _element in focusableElements)
         {
-            if (focusableElements.Length == 0 || !_element.selectableElement || !_element.focusTarget) return;
-            if (selectedUIObject == _element.selectableElement)
+            if (selectedElement == _element.selectableElement)
             {
                 SnapTo(_element.focusTarget , _element.offset);
-                previouslySelectedUIObject = EventSystem.current.currentSelectedGameObject;
+                previouslySelectedElement = EventSystem.current.currentSelectedGameObject;
             }
         }
     }

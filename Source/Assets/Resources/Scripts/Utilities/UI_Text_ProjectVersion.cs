@@ -1,9 +1,6 @@
 //========== Neverway 2022 Project Script | Written by Unknown Dev ============
 // 
-// Purpose: 
-// Applied to: 
-// Editor script: 
-// Notes: 
+// Purpose: Output the value of the project version to a TMP_Text component
 //
 //=============================================================================
 
@@ -41,6 +38,7 @@ public class UI_Text_ProjectVersion : MonoBehaviour
 	    if (!tmpText) return;
 	    tmpText.text = Application.version;
     }
+    
     
     //=-----------------=
     // Internal Functions
