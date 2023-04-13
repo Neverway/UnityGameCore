@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &926439679384849972
+--- !u!1 &8496858018866982840
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,24 +8,29 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 686817144650057554}
-  - component: {fileID: 6013674713891119978}
-  - component: {fileID: 1714173407229465060}
-  - component: {fileID: 6332604518915966513}
-  m_Layer: 0
+  - component: {fileID: 5674957493231413282}
+  - component: {fileID: 8080323805160662116}
+  - component: {fileID: 8876537136480042181}
+  - component: {fileID: 8340646900853259623}
+  - component: {fileID: 3027842336610363764}
+  - component: {fileID: 3900236737179811378}
+  - component: {fileID: 310564235518930889}
+  - component: {fileID: 7956667752907146439}
+  - component: {fileID: 1206565139840824837}
+  m_Layer: 3
   m_Name: System Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &686817144650057554
+--- !u!4 &5674957493231413282
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 926439679384849972}
+  m_GameObject: {fileID: 8496858018866982840}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -34,25 +39,70 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6013674713891119978
+--- !u!114 &8080323805160662116
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 926439679384849972}
+  m_GameObject: {fileID: 8496858018866982840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!114 &8876537136480042181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8496858018866982840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: 754dc86544f56dc98b947fe3a90c156f, type: 3}
+  m_PointAction: {fileID: -3719358082143914079, guid: 754dc86544f56dc98b947fe3a90c156f, type: 3}
+  m_MoveAction: {fileID: -3003151547640291207, guid: 754dc86544f56dc98b947fe3a90c156f, type: 3}
+  m_SubmitAction: {fileID: -5719249969998128314, guid: 754dc86544f56dc98b947fe3a90c156f, type: 3}
+  m_CancelAction: {fileID: -1730314930386706059, guid: 754dc86544f56dc98b947fe3a90c156f, type: 3}
+  m_LeftClickAction: {fileID: 2466151663642694641, guid: 754dc86544f56dc98b947fe3a90c156f, type: 3}
+  m_MiddleClickAction: {fileID: 0}
+  m_RightClickAction: {fileID: 0}
+  m_ScrollWheelAction: {fileID: 0}
+  m_TrackedDevicePositionAction: {fileID: 0}
+  m_TrackedDeviceOrientationAction: {fileID: 0}
+  m_DeselectOnBackgroundClick: 0
+  m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
+--- !u!114 &8340646900853259623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8496858018866982840}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 93c91a148cf625f2eaa367aed660d096, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1714173407229465060
+--- !u!114 &3027842336610363764
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 926439679384849972}
+  m_GameObject: {fileID: 8496858018866982840}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ee0c401fd5bde035bc87e3cb9271d21, type: 3}
@@ -61,36 +111,292 @@ MonoBehaviour:
   delayBeforeSceneChange: 0.25
   minRequiredLoadTime: 2
   loadingScreenSceneID: Loading
---- !u!114 &6332604518915966513
+--- !u!114 &3900236737179811378
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 926439679384849972}
+  m_GameObject: {fileID: 8496858018866982840}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f70bbcc36f7188398a9aa900b9dbab6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showButtonHints: 1
   buttonInputs:
   - bindingID: <Keyboard>/0
-    bindingIcon: {fileID: 21300000, guid: b19536b532148cd7f8ccc51af2c3911a, type: 3}
+    bindingIcon: {fileID: 21300000, guid: 0d03222a1d9fdb92e85cb23035890265, type: 3}
   - bindingID: <Keyboard>/1
-    bindingIcon: {fileID: 21300000, guid: b19536b532148cd7f8ccc51af2c3911a, type: 3}
+    bindingIcon: {fileID: 21300000, guid: 503c65fe7be8795f68fb76d9e41d4948, type: 3}
   - bindingID: <Keyboard>/2
-    bindingIcon: {fileID: 21300000, guid: b19536b532148cd7f8ccc51af2c3911a, type: 3}
+    bindingIcon: {fileID: 21300000, guid: 234638dd30ba8249f89a71432601b261, type: 3}
   - bindingID: <Keyboard>/3
-    bindingIcon: {fileID: 21300000, guid: b19536b532148cd7f8ccc51af2c3911a, type: 3}
+    bindingIcon: {fileID: 21300000, guid: 1644f40d8dd9ee10bb318388e5aaed6c, type: 3}
   - bindingID: <Keyboard>/4
-    bindingIcon: {fileID: 21300000, guid: b19536b532148cd7f8ccc51af2c3911a, type: 3}
+    bindingIcon: {fileID: 21300000, guid: 8a2981c6ea2cd6913bba48157477b326, type: 3}
   - bindingID: <Keyboard>/5
-    bindingIcon: {fileID: 21300000, guid: b19536b532148cd7f8ccc51af2c3911a, type: 3}
+    bindingIcon: {fileID: 21300000, guid: a742e1ac527f11db78c0ab9c8fbd2807, type: 3}
   - bindingID: <Keyboard>/6
-    bindingIcon: {fileID: 21300000, guid: b19536b532148cd7f8ccc51af2c3911a, type: 3}
+    bindingIcon: {fileID: 21300000, guid: 66c148b4ce26e197cb58bd064cfc0e60, type: 3}
   - bindingID: <Keyboard>/7
-    bindingIcon: {fileID: 21300000, guid: b19536b532148cd7f8ccc51af2c3911a, type: 3}
+    bindingIcon: {fileID: 21300000, guid: 2548ced61028f67e5b9012b5af37fbb5, type: 3}
+  - bindingID: <Keyboard>/8
+    bindingIcon: {fileID: 21300000, guid: bc2a8725f0d5c99c8a983aa9529132a3, type: 3}
   - bindingID: <Keyboard>/9
-    bindingIcon: {fileID: 21300000, guid: b19536b532148cd7f8ccc51af2c3911a, type: 3}
+    bindingIcon: {fileID: 21300000, guid: 05a8adda1cec58680bdf9e009f621222, type: 3}
   - bindingID: <Keyboard>/a
-    bindingIcon: {fileID: 21300000, guid: b19536b532148cd7f8ccc51af2c3911a, type: 3}
+    bindingIcon: {fileID: 21300000, guid: 7e0a0db5a9e9b83f6abf2ccb9e41ff79, type: 3}
+  - bindingID: <Keyboard>/b
+    bindingIcon: {fileID: 21300000, guid: 355971d4c94891b9d80ec87e44be30b9, type: 3}
+  - bindingID: <Keyboard>/c
+    bindingIcon: {fileID: 21300000, guid: c951ebe0ae93b7abaaca50bedac4b884, type: 3}
+  - bindingID: <Keyboard>/d
+    bindingIcon: {fileID: 21300000, guid: 62c4adf0eba43d0f08dc0100145906eb, type: 3}
+  - bindingID: <Keyboard>/e
+    bindingIcon: {fileID: 21300000, guid: b70591466a6f40e38b2133738000d760, type: 3}
+  - bindingID: <Keyboard>/f
+    bindingIcon: {fileID: 21300000, guid: a52b8ca2ec5c3f6309796b599753e808, type: 3}
+  - bindingID: <Keyboard>/g
+    bindingIcon: {fileID: 21300000, guid: 05d1bbfecd86ec742ad75e66af9a1379, type: 3}
+  - bindingID: <Keyboard>/h
+    bindingIcon: {fileID: 21300000, guid: 1d77750af836be49d941ea9db680ac3c, type: 3}
+  - bindingID: <Keyboard>/i
+    bindingIcon: {fileID: 21300000, guid: ce32aa53f7127352088cb1393ecef106, type: 3}
+  - bindingID: <Keyboard>/j
+    bindingIcon: {fileID: 21300000, guid: fb8f19e3e697b81d7bb6877fe597a727, type: 3}
+  - bindingID: <Keyboard>/k
+    bindingIcon: {fileID: 21300000, guid: ea32f93cab2755944bf864d7bc9b75cd, type: 3}
+  - bindingID: <Keyboard>/l
+    bindingIcon: {fileID: 21300000, guid: cb37fe6e97d0dc40bb91fbd46e8674c2, type: 3}
+  - bindingID: <Keyboard>/m
+    bindingIcon: {fileID: 21300000, guid: 14c88a1b8c9f26dde9753a8647204bf7, type: 3}
+  - bindingID: <Keyboard>/n
+    bindingIcon: {fileID: 21300000, guid: fa0ab62094a0be2eebe418ca012012ad, type: 3}
+  - bindingID: <Keyboard>/o
+    bindingIcon: {fileID: 21300000, guid: 23e7bcb45d4595eefba02cf7c20d0712, type: 3}
+  - bindingID: <Keyboard>/p
+    bindingIcon: {fileID: 21300000, guid: ed00a513cd5018511a66d7a72782b2dd, type: 3}
+  - bindingID: <Keyboard>/q
+    bindingIcon: {fileID: 21300000, guid: ba339660afc5c0402bcd83dc5b91da97, type: 3}
+  - bindingID: <Keyboard>/r
+    bindingIcon: {fileID: 21300000, guid: 5df0813168443abc095965815e84107b, type: 3}
+  - bindingID: <Keyboard>/s
+    bindingIcon: {fileID: 21300000, guid: 77f94b4631062e5baad90b91918bb44a, type: 3}
+  - bindingID: <Keyboard>/t
+    bindingIcon: {fileID: 21300000, guid: ff2ecb2386251a0f79a42be25d99a0b9, type: 3}
+  - bindingID: <Keyboard>/u
+    bindingIcon: {fileID: 21300000, guid: 5f197038e0afe904a871b9c66a0249bd, type: 3}
+  - bindingID: <Keyboard>/v
+    bindingIcon: {fileID: 21300000, guid: 81a83a468024a53deaa3bc761a7b02d1, type: 3}
+  - bindingID: <Keyboard>/w
+    bindingIcon: {fileID: 21300000, guid: 75d0ba568e940e4609312ca569a37424, type: 3}
+  - bindingID: <Keyboard>/x
+    bindingIcon: {fileID: 21300000, guid: cb913ad8d9cb62305a9da217f325e683, type: 3}
+  - bindingID: <Keyboard>/y
+    bindingIcon: {fileID: 21300000, guid: 772c59dac01416b94b441acb5360416f, type: 3}
+  - bindingID: <Keyboard>/z
+    bindingIcon: {fileID: 21300000, guid: af4e195f562b96468badf52d8eb4c248, type: 3}
+  - bindingID: <Keyboard>/f1
+    bindingIcon: {fileID: 21300000, guid: e69ddb0539d021ff59c6acffc8b98f90, type: 3}
+  - bindingID: <Keyboard>/f2
+    bindingIcon: {fileID: 21300000, guid: 4754037b498b128d189c32472381ac9b, type: 3}
+  - bindingID: <Keyboard>/f3
+    bindingIcon: {fileID: 21300000, guid: a91f4ec8a8d14d950bab3d3307f313ad, type: 3}
+  - bindingID: <Keyboard>/f4
+    bindingIcon: {fileID: 21300000, guid: d8d62f17476133888bb3b9624ea42057, type: 3}
+  - bindingID: <Keyboard>/f5
+    bindingIcon: {fileID: 21300000, guid: ccfde7791ebfee78f9455587b94676f1, type: 3}
+  - bindingID: <Keyboard>/f6
+    bindingIcon: {fileID: 21300000, guid: 408568e76c5974e8dbdd06c561927087, type: 3}
+  - bindingID: <Keyboard>/f7
+    bindingIcon: {fileID: 21300000, guid: a681d04388256568a8af18cd5d73f8d9, type: 3}
+  - bindingID: <Keyboard>/f8
+    bindingIcon: {fileID: 21300000, guid: 642ad11cffa6be5f2a98f6625a32ab2c, type: 3}
+  - bindingID: <Keyboard>/f9
+    bindingIcon: {fileID: 21300000, guid: 626a99ee8959b8042b227fa12cd83490, type: 3}
+  - bindingID: <Keyboard>/f10
+    bindingIcon: {fileID: 21300000, guid: 2010a2a624c3c0c45b4edd7fef1036c9, type: 3}
+  - bindingID: <Keyboard>/f11
+    bindingIcon: {fileID: 21300000, guid: 1612b76a0c7f8bb8e865c539aa9d4b71, type: 3}
+  - bindingID: <Keyboard>/f12
+    bindingIcon: {fileID: 21300000, guid: 4128bb8643e71f42286ba655ccc42a4e, type: 3}
+  - bindingID: <Keyboard>/upArrow
+    bindingIcon: {fileID: 21300000, guid: f330595d54093cce6a460238a292dd6b, type: 3}
+  - bindingID: <Keyboard>/downArrow
+    bindingIcon: {fileID: 21300000, guid: 1da05e9d702da9c01975914e525a21bd, type: 3}
+  - bindingID: <Keyboard>/leftArrow
+    bindingIcon: {fileID: 21300000, guid: 41f805a23ba6080fdae0b0ed483ae709, type: 3}
+  - bindingID: <Keyboard>/rightArrow
+    bindingIcon: {fileID: 21300000, guid: 0b6b8fe3e269eddce95942b4d7d732e2, type: 3}
+  - bindingID: <Keyboard>/escape
+    bindingIcon: {fileID: 21300000, guid: f4f8a5bf53891ca2d83d0fd3e1ed5254, type: 3}
+  - bindingID: <Keyboard>/tilda
+    bindingIcon: {fileID: 21300000, guid: 075e8a82ab1f7dc7b9419846d7a6bece, type: 3}
+  - bindingID: <Keyboard>/tab
+    bindingIcon: {fileID: 21300000, guid: 15b347e45e21cb4b79412e80f60e9e7c, type: 3}
+  - bindingID: <Keyboard>/capslock
+    bindingIcon: {fileID: 21300000, guid: 5d2a766ba9960b5dabde41311d528e10, type: 3}
+  - bindingID: <Keyboard>/leftShift
+    bindingIcon: {fileID: 21300000, guid: 0d32ffe38110f5008a0e37c24f37bccb, type: 3}
+  - bindingID: <Keyboard>/leftCtrl
+    bindingIcon: {fileID: 21300000, guid: b571c0032916afc2e8ad7eec55e3c3f5, type: 3}
+  - bindingID: <Keyboard>/windows
+    bindingIcon: {fileID: 21300000, guid: c364bbf7a2fe2791783246357303c882, type: 3}
+  - bindingID: <Keyboard>/leftAlt
+    bindingIcon: {fileID: 21300000, guid: 96946f943817626eaafb49d4de2b3a22, type: 3}
+  - bindingID: <Keyboard>/space
+    bindingIcon: {fileID: 21300000, guid: 3c9ebf5c9a122d350abc0985fc3a3182, type: 3}
+  - bindingID: <Keyboard>/minus
+    bindingIcon: {fileID: 21300000, guid: d8f7a6dee6fba77ccb8a616b75370295, type: 3}
+  - bindingID: <Keyboard>/plus
+    bindingIcon: {fileID: 21300000, guid: 0f5d7c56b1b6c51d5944a3009d374439, type: 3}
+  - bindingID: <Keyboard>/backspace
+    bindingIcon: {fileID: 21300000, guid: c5b0ae92ee98c3c3e850f19d5b4b0a45, type: 3}
+  - bindingID: <Keyboard>/leftBracket
+    bindingIcon: {fileID: 21300000, guid: 695e96d2c2a62c5ffa230d4dc5134858, type: 3}
+  - bindingID: <Keyboard>/rightBracket
+    bindingIcon: {fileID: 21300000, guid: f2133a7edf4b6d102adb0c457f86a60f, type: 3}
+  - bindingID: <Keyboard>/slash
+    bindingIcon: {fileID: 21300000, guid: e162deb7abfb2438a9977803de8f437d, type: 3}
+  - bindingID: <Keyboard>/semicolon
+    bindingIcon: {fileID: 21300000, guid: 0c4c4c463b2d082c48a504f550aa236a, type: 3}
+  - bindingID: <Keyboard>/quote
+    bindingIcon: {fileID: 21300000, guid: ab770e8ca1af3b74c8e865769deee88d, type: 3}
+  - bindingID: <Keyboard>/enter
+    bindingIcon: {fileID: 21300000, guid: d551507e0dadee8a58503f9b593fe160, type: 3}
+  - bindingID: <Keyboard>/leftBrace
+    bindingIcon: {fileID: 21300000, guid: 7434b8a87674de04385f2823586fafde, type: 3}
+  - bindingID: <Keyboard>/rightBrace
+    bindingIcon: {fileID: 21300000, guid: 6010bbd39afa7471faa68423dbcfc380, type: 3}
+  - bindingID: <Keyboard>/questionmark
+    bindingIcon: {fileID: 21300000, guid: 049861634f8eb9059917f4b543bae3a4, type: 3}
+  - bindingID: <Keyboard>/printScreen
+    bindingIcon: {fileID: 21300000, guid: 403020ae498a32f14bdd21f5d15198cf, type: 3}
+  - bindingID: <Keyboard>/insert
+    bindingIcon: {fileID: 21300000, guid: f461ec40073fe6895b57e75ddc3e99a4, type: 3}
+  - bindingID: <Keyboard>/home
+    bindingIcon: {fileID: 21300000, guid: c360838dfa1f0071ea701aeb189cbbd2, type: 3}
+  - bindingID: <Keyboard>/pageUp
+    bindingIcon: {fileID: 21300000, guid: 04e00fcbecde14bb7aab664e19259795, type: 3}
+  - bindingID: <Keyboard>/delete
+    bindingIcon: {fileID: 21300000, guid: 7d5460363b57ae90385c01f8df380653, type: 3}
+  - bindingID: <Keyboard>/end
+    bindingIcon: {fileID: 21300000, guid: 4321948ad5071e1bb841eee1e5a2d70f, type: 3}
+  - bindingID: <Keyboard>/pageDown
+    bindingIcon: {fileID: 21300000, guid: 9ff969c3252d42129b0fdf0bc6631143, type: 3}
+  - bindingID: <Keyboard>/numLock
+    bindingIcon: {fileID: 21300000, guid: 32fa0158a84431f38a9014992d9a2ab4, type: 3}
+  - bindingID: <Keyboard>/asterisk
+    bindingIcon: {fileID: 21300000, guid: 5384c2bcda8ad9b3caef81bbc1403d4e, type: 3}
+  - bindingID: <Mouse>/left
+    bindingIcon: {fileID: 21300000, guid: 9e9f807e9abab95feaaafc6fb25cf2ca, type: 3}
+  - bindingID: <Mouse>/middle
+    bindingIcon: {fileID: 21300000, guid: 6f6a84c053286a42590c1bfa55e456d7, type: 3}
+  - bindingID: <Mouse>/right
+    bindingIcon: {fileID: 21300000, guid: 91823543c83b4f42fae6465007f94225, type: 3}
+  - bindingID: <Mouse>/rightShift
+    bindingIcon: {fileID: 21300000, guid: 7c89294ecabd3402a913a8d7c6edbde4, type: 3}
+  - bindingID: <Mouse>/rightCtrl
+    bindingIcon: {fileID: 21300000, guid: b571c0032916afc2e8ad7eec55e3c3f5, type: 3}
+  - bindingID: <Mouse>/rightAlt
+    bindingIcon: {fileID: 21300000, guid: 96946f943817626eaafb49d4de2b3a22, type: 3}
+  rebindingSprite: {fileID: 21300000, guid: b6b2d36d5ea172fe9802758d37f8d3f0, type: 3}
+--- !u!114 &310564235518930889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8496858018866982840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00ddcf610f78b1c0e9ee9ae87621fbc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  focusedMenu: {fileID: 0}
+--- !u!114 &7956667752907146439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8496858018866982840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 468a012cfd641fc9a8e2f14d28cc5e38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 549b84953554a157688e4ed0cb77d9a7, type: 2}
+  defaultSettings:
+    displayResolution: 0
+    windowMode: 2
+    fpsCounter: 0
+    fpsLimit: 60
+    brightness: 100
+    lightingQuality: 2
+    shadowQuality: 2
+    textureQuality: 2
+    postProcessingQuality: 2
+    antiAliasing: 0
+    levelOfDetail: 2
+    ambientOcclusion: 1
+    bloom: 1
+    motionBlur: 1
+    master: 100
+    music: 100
+    soundEffects: 100
+    voiceChat: 100
+    characterChatter: 100
+    ambient: 100
+    menus: 100
+    verticalLookSensitivity: 100
+    horizontalLookSensitivity: 100
+    fieldOfView: 65
+    buttonHints: 1
+    gameChat: 1
+  currentSettings:
+    displayResolution: 0
+    windowMode: 2
+    fpsCounter: 0
+    fpsLimit: 60
+    brightness: 100
+    lightingQuality: 2
+    shadowQuality: 2
+    textureQuality: 2
+    postProcessingQuality: 2
+    antiAliasing: 0
+    levelOfDetail: 2
+    ambientOcclusion: 1
+    bloom: 1
+    motionBlur: 1
+    master: 100
+    music: 100
+    soundEffects: 100
+    voiceChat: 100
+    characterChatter: 100
+    ambient: 100
+    menus: 100
+    verticalLookSensitivity: 100
+    horizontalLookSensitivity: 100
+    fieldOfView: 65
+    buttonHints: 1
+    gameChat: 1
+  overlayProfile: {fileID: 11400000, guid: c1c3f383da3dc972ea8d48db1f13aae9, type: 2}
+--- !u!114 &1206565139840824837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8496858018866982840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: c1c3f383da3dc972ea8d48db1f13aae9, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
