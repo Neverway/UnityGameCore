@@ -1,0 +1,10 @@
+Entity Groups
+    Hostile
+    Friendly
+    Neutral
+
+Damage Types
+    Poison
+    Ice
+    Fire
+    Electric
