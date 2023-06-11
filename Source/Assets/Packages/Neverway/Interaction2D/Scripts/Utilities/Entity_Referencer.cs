@@ -1,9 +1,7 @@
 //======== Neverway 2023 Project Script | Written by Arthur Aka Liz ===========
 // 
 // Purpose: Provide functions for finding entities with different parameters
-// Applied to: This is inherited from, so it's not applied to anything, only
-//  referenced
-// Note: Possibly not needed right now
+// Applied to: 
 //
 //=============================================================================
 

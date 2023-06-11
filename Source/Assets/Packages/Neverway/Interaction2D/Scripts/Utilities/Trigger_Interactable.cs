@@ -1,4 +1,4 @@
-//======== Neverway 2022 Project Script | Written by Arthur Aka Liz ===========
+//======== Neverway 2023 Project Script | Written by Arthur Aka Liz ===========
 // 
 // Purpose: Fire events when activated by a trigger event
 // Applied to: An interactable trigger

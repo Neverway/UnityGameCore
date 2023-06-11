@@ -1,25 +1,37 @@
-//======== Neverway 2022 Project Script | Written by Arthur Aka Liz ===========
+//========== Neverway 2023 Project Script | Written by Unknown Dev ============
 // 
-// Purpose: Used to trigger the activation of Trigger_Interacts 
-// Applied to: The Interaction Trigger Prefab instantiated by an entity
+// Purpose: 
+// Applied to: 
 //
 //=============================================================================
 
+using System.Collections;
+using System.Collections.Generic;
+using UnityEditor;
+using UnityEditor.UIElements;
 using UnityEngine;
+using UnityEngine.UIElements;
 
-public class Trigger_Interaction : MonoBehaviour
+[CustomEditor(typeof(Trigger_Event))]
+public class Trigger_Event_Editor : Editor
 {
     //=-----------------=
     // Public Variables
     //=-----------------=
-    public Entity targetEntity;
+    public VisualTreeAsset UXML;
+    public override VisualElement CreateInspectorGUI()
+    {
+        var root = new VisualElement();
+        UXML.CloneTree(root);
+        return root;
+    }
 
 
     //=-----------------=
     // Private Variables
     //=-----------------=
-    
-    
+
+
     //=-----------------=
     // Reference Variables
     //=-----------------=
@@ -28,7 +40,8 @@ public class Trigger_Interaction : MonoBehaviour
     //=-----------------=
     // Mono Functions
     //=-----------------=
-    
+
+
     //=-----------------=
     // Internal Functions
     //=-----------------=

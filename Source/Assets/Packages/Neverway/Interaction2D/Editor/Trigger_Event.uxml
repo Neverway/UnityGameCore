@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:Label tabindex="-1" text="Target Filters" display-tooltip-when-elided="true" style="-unity-font-style: bold; font-size: 20px;" />
+    <ui:DropdownField label="Target Type" index="0" choices="Any Entity, Only Local Player" binding-path="targetType" />
+    <ui:VisualElement style="height: 5px; border-top-width: 4px; border-top-color: rgba(0, 0, 0, 0); margin-top: 5px;" />
+    <ui:Label tabindex="-1" text="Events" display-tooltip-when-elided="true" style="-unity-font-style: bold; font-size: 20px;" />
+    <uie:PropertyField label="OnTriggered" binding-path="OnTriggered" name="PropertyField" style="height: auto; color: rgb(0, 153, 255);" />
+    <uie:PropertyField label="OnExited" binding-path="OnExited" name="PropertyField" style="color: rgb(255, 119, 0);" />
+    <uie:PropertyField label="OnAllExited" binding-path="OnAllExited" name="PropertyField" style="color: rgb(213, 46, 16);" />
+    <ui:VisualElement style="height: 5px; border-top-width: 2px; border-top-color: rgba(0, 0, 0, 0.3); margin-top: 5px;" />
+    <ui:Foldout text="Debugging" value="false">
+        <ui:Toggle label="Activated" binding-path="activated" />
+    </ui:Foldout>
+</ui:UXML>

@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:Label tabindex="-1" text="Initial State" display-tooltip-when-elided="true" style="font-size: 20px; -unity-font-style: bold;" />
+    <ui:Toggle label="Toggled" binding-path="toggled" />
+    <ui:Label tabindex="-1" text="Events" display-tooltip-when-elided="true" style="font-size: 20px; -unity-font-style: bold;" />
+    <uie:PropertyField binding-path="OnInteract" label="OnInteract" style="color: rgb(0, 153, 255);" />
+    <uie:PropertyField binding-path="OnUntoggled" label="OnUntoggled" style="color: rgb(255, 119, 0);" />
+    <uie:PropertyField binding-path="OnToggled" label="OnToggled" style="color: rgb(0, 222, 50);" />
+</ui:UXML>
