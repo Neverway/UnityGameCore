@@ -1,5 +1,6 @@
 //======== Neverway 2023 Project Script | Written by Arthur Aka Liz ===========
 // 
+// Type: Component
 // Purpose: Output the frames per second to a TMP_Text component, this is used
 //	for displaying the FPS counter value when selected in the options menu
 // Applied to: The FPS counter UI element

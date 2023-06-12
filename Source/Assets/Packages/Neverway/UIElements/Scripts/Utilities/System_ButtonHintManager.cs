@@ -1,5 +1,6 @@
 //======== Neverway 2022 Project Script | Written by Arthur Aka Liz ===========
 // 
+// Type: Utility
 // Purpose: Handel data to return button sprite for input actions
 // Applied to: The persistent system manager
 //

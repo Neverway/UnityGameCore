@@ -1,5 +1,6 @@
 //======== Neverway 2023 Project Script | Written by Arthur Aka Liz ===========
 // 
+// Type: Component
 // Purpose: Set a UI image to the current keybind, for an Input action, for a
 //     specified input device
 // Applied to: A UI image element that you want to display a keybind for
