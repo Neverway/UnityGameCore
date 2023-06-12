@@ -1,5 +1,6 @@
-//======== Neverway 2022 Project Script | Written by Arthur Aka Liz ===========
+//======== Neverway 2023 Project Script | Written by Arthur Aka Liz ===========
 // 
+// Type: Utility
 // Purpose: Teleport an entity to a specified exit position
 // Applied to: A 2D warp trigger
 //
