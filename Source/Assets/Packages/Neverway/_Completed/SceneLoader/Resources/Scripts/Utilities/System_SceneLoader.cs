@@ -1,5 +1,6 @@
 //======== Neverway 2022 Project Script | Written by Arthur Aka Liz ===========
 // 
+// Type: Utility
 // Purpose: Asynchronously unload the current scene, and load a targetScene.
 //	Show a loading screen while the process is active.
 // Applied to: The persistent system manager
