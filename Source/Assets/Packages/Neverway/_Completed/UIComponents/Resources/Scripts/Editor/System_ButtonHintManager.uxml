@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:Label tabindex="-1" text="Button Sprite Assignments" display-tooltip-when-elided="true" name="Label" style="-unity-font-style: bold; font-size: 20px;" />
+    <uie:PropertyField binding-path="buttonInputs" />
+    <ui:VisualElement style="height: 5px; border-top-width: 2px; border-top-color: rgba(0, 0, 0, 0.3); margin-top: 5px;" />
+    <ui:Foldout text="Debuging" name="Foldout" value="false">
+        <ui:Toggle label="Show Button Hints" binding-path="showButtonHints" />
+    </ui:Foldout>
+</ui:UXML>

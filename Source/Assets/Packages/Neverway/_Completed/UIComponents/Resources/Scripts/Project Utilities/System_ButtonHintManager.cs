@@ -1,6 +1,6 @@
 //======== Neverway 2022 Project Script | Written by Arthur Aka Liz ===========
 // 
-// Type: Utility
+// Type: Project Utility
 // Purpose: Handel data to return button sprite for input actions
 // Applied to: The persistent system manager
 //
@@ -27,9 +27,11 @@ public class System_ButtonHintManager : MonoBehaviour
     //=-----------------=
     // Reference Variables
     //=-----------------=
+    // CHANGE THESE OUT FOR YOUR PROJECTS ACTIONS
     private Input_Actions.MenuActions menuActions;
     private Input_Actions.Player2DActions player2DActions;
     private Input_Actions.Player3DActions player3DActions;
+    
     public Sprite rebindingSprite;
     
 
@@ -38,6 +40,7 @@ public class System_ButtonHintManager : MonoBehaviour
     //=-----------------=
     private void Awake()
     {
+	    // CHANGE THESE OUT FOR YOUR PROJECTS ACTIONS
 	    menuActions = new Input_Actions().Menu;
 	    player2DActions = new Input_Actions().Player2D;
 	    player3DActions = new Input_Actions().Player3D;
@@ -75,6 +78,7 @@ public class System_ButtonHintManager : MonoBehaviour
     {
 	    switch (_targetActionMap)
 	    {
+		    // CHANGE THESE OUT FOR YOUR PROJECTS ACTIONS
 		    case "menu":
 		    {
 			    foreach (var _action in menuActions.Get().actions) if (_targetAction == _action.name) return _action;
@@ -82,13 +86,7 @@ public class System_ButtonHintManager : MonoBehaviour
 		    }
 		    case "player2D":
 		    {
-			    foreach (var _action in player2DActions.Get().actions)
-			    {
-				    if (_targetAction == _action.name)
-				    {
-					    return _action;
-				    }
-			    }
+			    foreach (var _action in player2DActions.Get().actions) if (_targetAction == _action.name) return _action; 
 			    break;
 		    }
 		    case "player3D":

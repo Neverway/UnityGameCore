@@ -15,7 +15,7 @@ public class UI_Text_SliderValue : MonoBehaviour
     //=-----------------=
     // Public Variables
     //=-----------------=
-    [SerializeField] private float offset;
+    [SerializeField] private float valueOffset;
 
 
     //=-----------------=
@@ -41,7 +41,7 @@ public class UI_Text_SliderValue : MonoBehaviour
     private void Update()
     {
 	    if (!slider) return;
-	    tmpText.text = (slider.value + offset).ToString();
+	    tmpText.text = (slider.value + valueOffset).ToString();
     }
     
     

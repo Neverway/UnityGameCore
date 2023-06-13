@@ -1,1 +1,0 @@
-Unity/NewInputSystem/Player2DActions

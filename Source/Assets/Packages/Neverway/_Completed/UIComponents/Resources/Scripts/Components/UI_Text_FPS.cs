@@ -31,12 +31,17 @@ public class UI_Text_FPS : MonoBehaviour
     //=-----------------=
     // Reference Variables
     //=-----------------=
-    [SerializeField] private TMP_Text fpsCounterText;
+    private TMP_Text fpsCounterText;
 
 
     //=-----------------=
     // Mono Functions
     //=-----------------=
+    private void Start()
+    {
+	    fpsCounterText = GetComponent<TMP_Text>();
+    }
+
     private void Update()
     {
 	    if (!active) return;
