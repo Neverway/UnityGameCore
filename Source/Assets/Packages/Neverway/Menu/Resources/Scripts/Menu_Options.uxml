@@ -1,40 +1,40 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
     <ui:Label tabindex="-1" text="Graphics" display-tooltip-when-elided="true" name="Label" style="-unity-font-style: bold; font-size: 20px;" />
     <ui:Foldout text="Display" name="Foldout" value="false">
-        <uie:ObjectField label="Display Resolution" style="width: auto;" />
-        <uie:ObjectField label="Window Mode" name="ObjectField" style="width: auto;" />
-        <uie:ObjectField label="FPS Counter" name="ObjectField" style="width: auto;" />
-        <uie:ObjectField label="FPS Limit" name="ObjectField" style="width: auto;" />
-        <uie:ObjectField label="Brightness" name="ObjectField" style="width: auto;" />
+        <uie:ObjectField label="Display Resolution" binding-path="displayResolution" type="TMPro.TMP_Dropdown, Unity.TextMeshPro" style="width: auto;" />
+        <uie:ObjectField label="Window Mode" name="ObjectField" binding-path="windowMode" type="TMPro.TMP_Dropdown, Unity.TextMeshPro" style="width: auto;" />
+        <uie:ObjectField label="FPS Counter" name="ObjectField" type="TMPro.TMP_Dropdown, Unity.TextMeshPro" binding-path="fpsCounter" style="width: auto;" />
+        <uie:ObjectField label="FPS Limit" name="ObjectField" type="UnityEngine.UI.Slider, UnityEngine.UI" binding-path="fpsLimit" style="width: auto;" />
+        <uie:ObjectField label="Brightness" name="ObjectField" type="UnityEngine.UI.Slider, UnityEngine.UI" binding-path="brightness" style="width: auto;" />
     </ui:Foldout>
     <ui:Foldout text="Quality" name="Foldout" value="false">
-        <uie:ObjectField label="Lighting Quality" style="width: auto;" />
-        <uie:ObjectField label="Shadow Quality" name="ObjectField" style="width: auto;" />
-        <uie:ObjectField label="Texture Quality" name="ObjectField" style="width: auto;" />
-        <uie:ObjectField label="PostProcessing Quality" name="ObjectField" style="width: auto;" />
-        <uie:ObjectField label="Anti-aliasing" name="ObjectField" style="width: auto;" />
-        <uie:ObjectField label="Level Of Detail" name="ObjectField" style="width: auto;" />
-        <uie:ObjectField label="Ambient Occlusion" name="ObjectField" style="width: auto;" />
-        <uie:ObjectField label="Bloom" name="ObjectField" style="width: auto;" />
-        <uie:ObjectField label="Motion Blur" name="ObjectField" style="width: auto;" />
+        <uie:ObjectField label="Lighting Quality" binding-path="lightingQuality" type="TMPro.TMP_Dropdown, Unity.TextMeshPro" style="width: auto;" />
+        <uie:ObjectField label="Shadow Quality" name="ObjectField" binding-path="shadowQuality" type="TMPro.TMP_Dropdown, Unity.TextMeshPro" style="width: auto;" />
+        <uie:ObjectField label="Texture Quality" name="ObjectField" binding-path="textureQuality" type="TMPro.TMP_Dropdown, Unity.TextMeshPro" style="width: auto;" />
+        <uie:ObjectField label="PostProcessing Quality" name="ObjectField" type="TMPro.TMP_Dropdown, Unity.TextMeshPro" binding-path="postProcessingQuality" style="width: auto;" />
+        <uie:ObjectField label="Anti-aliasing" name="ObjectField" type="TMPro.TMP_Dropdown, Unity.TextMeshPro" binding-path="antiAliasing" style="width: auto;" />
+        <uie:ObjectField label="Level Of Detail" name="ObjectField" type="TMPro.TMP_Dropdown, Unity.TextMeshPro" binding-path="levelOfDetail" style="width: auto;" />
+        <uie:ObjectField label="Ambient Occlusion" name="ObjectField" type="TMPro.TMP_Dropdown, Unity.TextMeshPro" binding-path="ambientOcclusion" style="width: auto;" />
+        <uie:ObjectField label="Bloom" name="ObjectField" type="TMPro.TMP_Dropdown, Unity.TextMeshPro" binding-path="bloom" style="width: auto;" />
+        <uie:ObjectField label="Motion Blur" name="ObjectField" type="TMPro.TMP_Dropdown, Unity.TextMeshPro" binding-path="motionBlur" style="width: auto;" />
     </ui:Foldout>
     <ui:Label tabindex="-1" text="Sound" display-tooltip-when-elided="true" name="Label" style="-unity-font-style: bold; font-size: 20px;" />
     <ui:Foldout text="Audio Mixer" name="Foldout" value="false">
-        <uie:ObjectField label="Master" style="width: auto;" />
-        <uie:ObjectField label="Music" name="ObjectField" style="width: auto;" />
-        <uie:ObjectField label="SoundEffects" name="ObjectField" style="width: auto;" />
-        <uie:ObjectField label="Voice Chat" name="ObjectField" style="width: auto;" />
-        <uie:ObjectField label="Character Chatter" name="ObjectField" style="width: auto;" />
-        <uie:ObjectField label="Ambient" name="ObjectField" style="width: auto;" />
-        <uie:ObjectField label="Menus" name="ObjectField" style="width: auto;" />
+        <uie:ObjectField label="Master" allow-scene-objects="true" type="TMPro.TMP_Dropdown, Unity.TextMeshPro" binding-path="master" style="width: auto;" />
+        <uie:ObjectField label="Music" name="ObjectField" type="TMPro.TMP_Dropdown, Unity.TextMeshPro" binding-path="music" style="width: auto; height: 19px;" />
+        <uie:ObjectField label="SoundEffects" name="ObjectField" type="TMPro.TMP_Dropdown, Unity.TextMeshPro" binding-path="soundEffects" style="width: auto;" />
+        <uie:ObjectField label="Voice Chat" name="ObjectField" type="TMPro.TMP_Dropdown, Unity.TextMeshPro" binding-path="voiceChat" style="width: auto;" />
+        <uie:ObjectField label="Character Chatter" name="ObjectField" type="TMPro.TMP_Dropdown, Unity.TextMeshPro" binding-path="characterChatter" style="width: auto;" />
+        <uie:ObjectField label="Ambient" name="ObjectField" type="TMPro.TMP_Dropdown, Unity.TextMeshPro" binding-path="ambient" style="width: auto;" />
+        <uie:ObjectField label="Menus" name="ObjectField" type="TMPro.TMP_Dropdown, Unity.TextMeshPro" binding-path="menus" style="width: auto;" />
     </ui:Foldout>
     <ui:Label tabindex="-1" text="Gameplay" display-tooltip-when-elided="true" name="Label" style="-unity-font-style: bold; font-size: 20px;" />
     <ui:Foldout text="Preferences" name="Foldout" value="false">
-        <uie:ObjectField label="Vertical Look Speed" style="width: auto;" />
-        <uie:ObjectField label="Horizontal Look Speed" name="ObjectField" style="width: auto;" />
-        <uie:ObjectField label="Field Of View" name="ObjectField" style="width: auto;" />
-        <uie:ObjectField label="Button Hint" name="ObjectField" style="width: auto;" />
-        <uie:ObjectField label="Game Chat" name="ObjectField" style="width: auto;" />
-        <uie:ObjectField label="Graphic Content" name="ObjectField" style="width: auto;" />
+        <uie:ObjectField label="Vertical Look Speed" binding-path="verticalLookSensitivity" type="UnityEngine.UI.Slider, UnityEngine.UI" style="width: auto;" />
+        <uie:ObjectField label="Horizontal Look Speed" name="ObjectField" type="UnityEngine.UI.Slider, UnityEngine.UI" binding-path="horizontalLookSensitivity" style="width: auto;" />
+        <uie:ObjectField label="Field Of View" name="ObjectField" type="UnityEngine.UI.Slider, UnityEngine.UI" binding-path="fieldOfView" style="width: auto;" />
+        <uie:ObjectField label="Button Hint" name="ObjectField" type="TMPro.TMP_Dropdown, Unity.TextMeshPro" binding-path="buttonHints" style="width: auto;" />
+        <uie:ObjectField label="Game Chat" name="ObjectField" type="TMPro.TMP_Dropdown, Unity.TextMeshPro" binding-path="gameChat" style="width: auto;" />
+        <uie:ObjectField label="Graphic Content" name="ObjectField" type="TMPro.TMP_Dropdown, Unity.TextMeshPro" binding-path="graphicContent" style="width: auto;" />
     </ui:Foldout>
 </ui:UXML>
