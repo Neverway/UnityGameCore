@@ -1,26 +1,20 @@
-//========== Neverway 2023 Project Script | Written by Unknown Dev ============
+//======== Neverway 2023 Project Script | Written by Arthur Aka Liz ===========
 // 
+// Type: Utility
 // Purpose: 
 // Applied to: 
 //
 //=============================================================================
 
-using UnityEditor;
-using UnityEngine.UIElements;
+using UnityEngine;
 
-[CustomEditor(typeof(Trigger_Event))]
-public class Trigger_Event_Editor : Editor
+public abstract class Entity_Controller : ScriptableObject
 {
     //=-----------------=
     // Public Variables
     //=-----------------=
-    public VisualTreeAsset UXML;
-    public override VisualElement CreateInspectorGUI()
-    {
-        var root = new VisualElement();
-        UXML.CloneTree(root);
-        return root;
-    }
+    public abstract void EntityAwake(Entity _entity);
+    public abstract void Think(Entity _entity);
 
 
     //=-----------------=
@@ -30,11 +24,6 @@ public class Trigger_Event_Editor : Editor
 
     //=-----------------=
     // Reference Variables
-    //=-----------------=
-
-
-    //=-----------------=
-    // Mono Functions
     //=-----------------=
 
 

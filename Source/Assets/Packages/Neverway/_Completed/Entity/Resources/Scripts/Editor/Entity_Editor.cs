@@ -5,11 +5,15 @@
 //
 //=============================================================================
 
+using System.Collections;
+using System.Collections.Generic;
 using UnityEditor;
+using UnityEditor.UIElements;
+using UnityEngine;
 using UnityEngine.UIElements;
 
-[CustomEditor(typeof(Trigger_Event))]
-public class Trigger_Event_Editor : Editor
+[CustomEditor(typeof(Entity))]
+public class Entity_Editor : Editor
 {
     //=-----------------=
     // Public Variables

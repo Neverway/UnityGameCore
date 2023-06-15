@@ -1,0 +1,40 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:Label tabindex="-1" text="Graphics" display-tooltip-when-elided="true" name="Label" style="-unity-font-style: bold; font-size: 20px;" />
+    <ui:Foldout text="Display" name="Foldout" value="false">
+        <uie:ObjectField label="Display Resolution" style="width: auto;" />
+        <uie:ObjectField label="Window Mode" name="ObjectField" style="width: auto;" />
+        <uie:ObjectField label="FPS Counter" name="ObjectField" style="width: auto;" />
+        <uie:ObjectField label="FPS Limit" name="ObjectField" style="width: auto;" />
+        <uie:ObjectField label="Brightness" name="ObjectField" style="width: auto;" />
+    </ui:Foldout>
+    <ui:Foldout text="Quality" name="Foldout" value="false">
+        <uie:ObjectField label="Lighting Quality" style="width: auto;" />
+        <uie:ObjectField label="Shadow Quality" name="ObjectField" style="width: auto;" />
+        <uie:ObjectField label="Texture Quality" name="ObjectField" style="width: auto;" />
+        <uie:ObjectField label="PostProcessing Quality" name="ObjectField" style="width: auto;" />
+        <uie:ObjectField label="Anti-aliasing" name="ObjectField" style="width: auto;" />
+        <uie:ObjectField label="Level Of Detail" name="ObjectField" style="width: auto;" />
+        <uie:ObjectField label="Ambient Occlusion" name="ObjectField" style="width: auto;" />
+        <uie:ObjectField label="Bloom" name="ObjectField" style="width: auto;" />
+        <uie:ObjectField label="Motion Blur" name="ObjectField" style="width: auto;" />
+    </ui:Foldout>
+    <ui:Label tabindex="-1" text="Sound" display-tooltip-when-elided="true" name="Label" style="-unity-font-style: bold; font-size: 20px;" />
+    <ui:Foldout text="Audio Mixer" name="Foldout" value="false">
+        <uie:ObjectField label="Master" style="width: auto;" />
+        <uie:ObjectField label="Music" name="ObjectField" style="width: auto;" />
+        <uie:ObjectField label="SoundEffects" name="ObjectField" style="width: auto;" />
+        <uie:ObjectField label="Voice Chat" name="ObjectField" style="width: auto;" />
+        <uie:ObjectField label="Character Chatter" name="ObjectField" style="width: auto;" />
+        <uie:ObjectField label="Ambient" name="ObjectField" style="width: auto;" />
+        <uie:ObjectField label="Menus" name="ObjectField" style="width: auto;" />
+    </ui:Foldout>
+    <ui:Label tabindex="-1" text="Gameplay" display-tooltip-when-elided="true" name="Label" style="-unity-font-style: bold; font-size: 20px;" />
+    <ui:Foldout text="Preferences" name="Foldout" value="false">
+        <uie:ObjectField label="Vertical Look Speed" style="width: auto;" />
+        <uie:ObjectField label="Horizontal Look Speed" name="ObjectField" style="width: auto;" />
+        <uie:ObjectField label="Field Of View" name="ObjectField" style="width: auto;" />
+        <uie:ObjectField label="Button Hint" name="ObjectField" style="width: auto;" />
+        <uie:ObjectField label="Game Chat" name="ObjectField" style="width: auto;" />
+        <uie:ObjectField label="Graphic Content" name="ObjectField" style="width: auto;" />
+    </ui:Foldout>
+</ui:UXML>

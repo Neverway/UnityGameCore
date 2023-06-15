@@ -5,11 +5,12 @@
 //
 //=============================================================================
 
+
 using UnityEditor;
 using UnityEngine.UIElements;
 
-[CustomEditor(typeof(Trigger_Event))]
-public class Trigger_Event_Editor : Editor
+[CustomEditor(typeof(Menu_Options))]
+public class Menu_Options_Editor : Editor
 {
     //=-----------------=
     // Public Variables
@@ -26,8 +27,8 @@ public class Trigger_Event_Editor : Editor
     //=-----------------=
     // Private Variables
     //=-----------------=
-
-
+    
+    
     //=-----------------=
     // Reference Variables
     //=-----------------=
@@ -36,13 +37,13 @@ public class Trigger_Event_Editor : Editor
     //=-----------------=
     // Mono Functions
     //=-----------------=
-
-
+    
+    
     //=-----------------=
     // Internal Functions
     //=-----------------=
-
-
+    
+    
     //=-----------------=
     // External Functions
     //=-----------------=
