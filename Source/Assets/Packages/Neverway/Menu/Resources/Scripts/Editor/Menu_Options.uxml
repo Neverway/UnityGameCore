@@ -20,13 +20,13 @@
     </ui:Foldout>
     <ui:Label tabindex="-1" text="Sound" display-tooltip-when-elided="true" name="Label" style="-unity-font-style: bold; font-size: 20px;" />
     <ui:Foldout text="Audio Mixer" name="Foldout" value="false">
-        <uie:ObjectField label="Master" allow-scene-objects="true" type="TMPro.TMP_Dropdown, Unity.TextMeshPro" binding-path="master" style="width: auto;" />
-        <uie:ObjectField label="Music" name="ObjectField" type="TMPro.TMP_Dropdown, Unity.TextMeshPro" binding-path="music" style="width: auto; height: 19px;" />
-        <uie:ObjectField label="SoundEffects" name="ObjectField" type="TMPro.TMP_Dropdown, Unity.TextMeshPro" binding-path="soundEffects" style="width: auto;" />
-        <uie:ObjectField label="Voice Chat" name="ObjectField" type="TMPro.TMP_Dropdown, Unity.TextMeshPro" binding-path="voiceChat" style="width: auto;" />
-        <uie:ObjectField label="Character Chatter" name="ObjectField" type="TMPro.TMP_Dropdown, Unity.TextMeshPro" binding-path="characterChatter" style="width: auto;" />
-        <uie:ObjectField label="Ambient" name="ObjectField" type="TMPro.TMP_Dropdown, Unity.TextMeshPro" binding-path="ambient" style="width: auto;" />
-        <uie:ObjectField label="Menus" name="ObjectField" type="TMPro.TMP_Dropdown, Unity.TextMeshPro" binding-path="menus" style="width: auto;" />
+        <uie:ObjectField label="Master" allow-scene-objects="true" type="UnityEngine.UI.Slider, UnityEngine.UI" binding-path="master" style="width: auto;" />
+        <uie:ObjectField label="Music" name="ObjectField" type="UnityEngine.UI.Slider, UnityEngine.UI" binding-path="music" style="width: auto; height: 19px;" />
+        <uie:ObjectField label="SoundEffects" name="ObjectField" type="UnityEngine.UI.Slider, UnityEngine.UI" binding-path="soundEffects" style="width: auto;" />
+        <uie:ObjectField label="Voice Chat" name="ObjectField" type="UnityEngine.UI.Slider, UnityEngine.UI" binding-path="voiceChat" style="width: auto;" />
+        <uie:ObjectField label="Character Chatter" name="ObjectField" type="UnityEngine.UI.Slider, UnityEngine.UI" binding-path="characterChatter" style="width: auto;" />
+        <uie:ObjectField label="Ambient" name="ObjectField" type="UnityEngine.UI.Slider, UnityEngine.UI" binding-path="ambient" style="width: auto;" />
+        <uie:ObjectField label="Menus" name="ObjectField" type="UnityEngine.UI.Slider, UnityEngine.UI" binding-path="menus" style="width: auto;" />
     </ui:Foldout>
     <ui:Label tabindex="-1" text="Gameplay" display-tooltip-when-elided="true" name="Label" style="-unity-font-style: bold; font-size: 20px;" />
     <ui:Foldout text="Preferences" name="Foldout" value="false">
@@ -36,5 +36,6 @@
         <uie:ObjectField label="Button Hint" name="ObjectField" type="TMPro.TMP_Dropdown, Unity.TextMeshPro" binding-path="buttonHints" style="width: auto;" />
         <uie:ObjectField label="Game Chat" name="ObjectField" type="TMPro.TMP_Dropdown, Unity.TextMeshPro" binding-path="gameChat" style="width: auto;" />
         <uie:ObjectField label="Graphic Content" name="ObjectField" type="TMPro.TMP_Dropdown, Unity.TextMeshPro" binding-path="graphicContent" style="width: auto;" />
+        <uie:ObjectField label="Splitscreen Orientation" name="ObjectField" type="TMPro.TMP_Dropdown, Unity.TextMeshPro" binding-path="splitscreenOrientation" style="width: auto;" />
     </ui:Foldout>
 </ui:UXML>

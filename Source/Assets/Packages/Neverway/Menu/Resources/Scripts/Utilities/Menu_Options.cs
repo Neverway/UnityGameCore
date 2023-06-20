@@ -1,5 +1,6 @@
 //======== Neverway 2022 Project Script | Written by Arthur Aka Liz ===========
 // 
+// Type: Utility
 // Purpose: Pass UI events to modify the System_ApplicationSettings values
 // Applied to: The root of the options menu
 //
@@ -59,6 +60,8 @@ public class Menu_Options : MonoBehaviour
     [SerializeField] private Slider fieldOfView;
     [SerializeField] private TMP_Dropdown buttonHints;
     [SerializeField] private TMP_Dropdown gameChat;
+    [SerializeField] private TMP_Dropdown graphicContent;
+    [SerializeField] private TMP_Dropdown splitscreenOrientation;
 
 
     //=-----------------=
@@ -77,6 +80,11 @@ public class Menu_Options : MonoBehaviour
     //=-----------------=
     private void GetCurrentSettings()
     {
+        if (!applicationSettings)
+        {
+            Debug.LogWarning("An options menu is trying to access System_ApplicationSettings, but it was not found. The options menu will not function correctly without it!");
+            return;
+        }
         // Graphics
         if (displayResolution) displayResolution.value = applicationSettings.currentSettings.displayResolution;
         if (windowMode) windowMode.value = applicationSettings.currentSettings.windowMode;

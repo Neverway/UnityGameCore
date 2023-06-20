@@ -1,5 +1,6 @@
 //======== Neverway 2022 Project Script | Written by Arthur Aka Liz ===========
 // 
+// Type: Component
 // Purpose: Set a scrollview container to show the selected menu object
 // Applied to: The root of a scrollview
 //

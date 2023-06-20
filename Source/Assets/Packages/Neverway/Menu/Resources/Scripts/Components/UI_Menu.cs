@@ -1,5 +1,6 @@
 //======== Neverway 2022 Project Script | Written by Arthur Aka Liz ===========
 // 
+// Type: Component
 // Purpose: 
 // Applied to: 
 //

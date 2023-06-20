@@ -1,5 +1,6 @@
 //======== Neverway 2023 Project Script | Written by Arthur Aka Liz ===========
 // 
+// Type: Utility
 // Purpose: Handle the functions for changing application settings that are
 //    called by Menu_Options
 // Applied to: The persistent system manager

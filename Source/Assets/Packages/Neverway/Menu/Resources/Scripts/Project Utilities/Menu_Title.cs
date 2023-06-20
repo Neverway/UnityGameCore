@@ -1,5 +1,6 @@
 //======== Neverway 2022 Project Script | Written by Arthur Aka Liz ===========
 // 
+// Type: Project Utility
 // Purpose: Provide functions for the buttons on the title screen for this
 //  project
 // Applied to: The root of the title menu UI

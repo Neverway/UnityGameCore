@@ -1,5 +1,6 @@
 //======== Neverway 2022 Project Script | Written by Arthur Aka Liz ===========
 // 
+// Type: Project Utility
 // Purpose: Handle the project specific functions for pausing the game
 // Applied to: The persistent system manager
 //

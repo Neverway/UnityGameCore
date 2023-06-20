@@ -1,5 +1,6 @@
 //======== Neverway 2023 Project Script | Written by Arthur Aka Liz ===========
 // 
+// Type: Utility
 // Purpose: Fire events for pausing and un-pausing the game when a 'pausing menu'
 //  is open
 // Applied to: The root of a pausing menu (This is not true, why is this here?)

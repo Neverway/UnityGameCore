@@ -4985,8 +4985,8 @@ RectTransform:
   m_Father: {fileID: 5691206399244029413}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.7916667, y: 0}
-  m_AnchorMax: {x: 0.7916667, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -10823,7 +10823,7 @@ RectTransform:
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.7916667, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -15828,7 +15828,7 @@ RectTransform:
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0.2, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -25901,32 +25901,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b465acb5b35dcfb1ab9c72c2daba6ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayResolution: {fileID: 0}
-  windowMode: {fileID: 0}
-  fpsCounter: {fileID: 0}
-  fpsLimit: {fileID: 0}
-  brightness: {fileID: 0}
-  lightingQuality: {fileID: 0}
-  shadowQuality: {fileID: 0}
-  textureQuality: {fileID: 0}
-  postProcessingQuality: {fileID: 0}
-  antiAliasing: {fileID: 0}
-  levelOfDetail: {fileID: 0}
-  ambientOcclusion: {fileID: 0}
-  bloom: {fileID: 0}
-  motionBlur: {fileID: 0}
-  master: {fileID: 0}
-  music: {fileID: 0}
-  soundEffects: {fileID: 0}
-  voiceChat: {fileID: 0}
-  characterChatter: {fileID: 0}
-  ambient: {fileID: 0}
-  menus: {fileID: 0}
-  verticalLookSensitivity: {fileID: 0}
-  horizontalLookSensitivity: {fileID: 0}
-  fieldOfView: {fileID: 0}
-  buttonHints: {fileID: 0}
-  gameChat: {fileID: 0}
+  displayResolution: {fileID: 4777787532800167584}
+  windowMode: {fileID: 4063727278041505806}
+  fpsCounter: {fileID: 7425106087443665303}
+  fpsLimit: {fileID: 531851323630187292}
+  brightness: {fileID: 8365977415624046812}
+  lightingQuality: {fileID: 8842696186071428523}
+  shadowQuality: {fileID: 5706817675946127142}
+  textureQuality: {fileID: 5058782140028623419}
+  postProcessingQuality: {fileID: 1334442571706297588}
+  antiAliasing: {fileID: 5634263604707227982}
+  levelOfDetail: {fileID: 8966493350070352433}
+  ambientOcclusion: {fileID: 3235315787366449273}
+  bloom: {fileID: 1215906520722895719}
+  motionBlur: {fileID: 1036244706113821336}
+  master: {fileID: 5823864145542578441}
+  music: {fileID: 3424583435073537193}
+  soundEffects: {fileID: 9080508799140678700}
+  voiceChat: {fileID: 9090703483281147466}
+  characterChatter: {fileID: 2323795776742636303}
+  ambient: {fileID: 164576146353222909}
+  menus: {fileID: 5908857482751465201}
+  verticalLookSensitivity: {fileID: 959358479609942307}
+  horizontalLookSensitivity: {fileID: 8326516820409095733}
+  fieldOfView: {fileID: 4421195981554340698}
+  buttonHints: {fileID: 4995659168298481955}
+  gameChat: {fileID: 3669910375244545970}
+  graphicContent: {fileID: 8011835087173652762}
+  splitscreenOrientation: {fileID: 4890654588060578901}
 --- !u!1 &6571233067691531184
 GameObject:
   m_ObjectHideFlags: 0
@@ -37102,8 +37104,8 @@ RectTransform:
   m_Father: {fileID: 3200215212701834646}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.2, y: 0}
+  m_AnchorMax: {x: 0.2, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -37478,7 +37480,7 @@ MonoBehaviour:
   m_MinValue: 24
   m_MaxValue: 120
   m_WholeNumbers: 1
-  m_Value: 20
+  m_Value: 24
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:

@@ -1,5 +1,6 @@
 //======== Neverway 2023 Project Script | Written by Arthur Aka Liz ===========
 // 
+// Type: Component
 // Purpose: Set the UI element to focus the view on when using UI_Menu_Focus_ScrollView
 // Applied to: A focusable UI option
 //
