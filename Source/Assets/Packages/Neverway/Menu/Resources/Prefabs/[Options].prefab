@@ -5309,6 +5309,7 @@ GameObject:
   m_Component:
   - component: {fileID: 31515512088799026}
   - component: {fileID: 4982897896451559625}
+  - component: {fileID: 8343560716341458395}
   m_Layer: 0
   m_Name: Item
   m_TagString: Untagged
@@ -5387,6 +5388,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 1
+--- !u!114 &8343560716341458395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352263806340436946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026b58529d9da0e829d69414c6cfd8f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  focusTarget: 0
 --- !u!1 &1378999529027684385
 GameObject:
   m_ObjectHideFlags: 0
@@ -35372,6 +35386,7 @@ GameObject:
   - component: {fileID: 3311511680611708358}
   - component: {fileID: 3188276690901291347}
   - component: {fileID: 2123745912877139219}
+  - component: {fileID: 7759802458924666758}
   m_Layer: 0
   m_Name: '[Display Resolution]'
   m_TagString: Untagged
@@ -35439,6 +35454,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7759802458924666758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8455849180944483595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b241fd5d5e16cbf33986f9f564f2c2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  focusableElements: []
+  contentWindow: {fileID: 4698740352656058017}
 --- !u!1 &8467536175367777999
 GameObject:
   m_ObjectHideFlags: 0
