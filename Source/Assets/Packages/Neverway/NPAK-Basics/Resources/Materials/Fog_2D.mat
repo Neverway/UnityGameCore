@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 2D_Fog
+  m_Name: Fog_2D
   m_Shader: {fileID: -6465566751694194690, guid: c2f48f0bf86da98b2b3102ae37d8672a, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0

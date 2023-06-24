@@ -77,6 +77,11 @@ public class System_SceneLoader : MonoBehaviour
     public void LoadScene(string _targetSceneID)
     {
 	    targetSceneID = _targetSceneID;
+	    if (!DoesSceneExist(_targetSceneID))
+	    {
+		    Debug.LogWarning(_targetSceneID + " Is not a valid level! Loading fallback scene...");
+		    targetSceneID = "Error";
+	    }
 	    StartCoroutine(Load());
     }
     
@@ -85,6 +90,27 @@ public class System_SceneLoader : MonoBehaviour
     {
 	    if (!networkManager) networkManager = FindObjectOfType<NetworkManager>();
 	    networkManager.SceneManager.LoadScene("Tmp_Title", LoadSceneMode.Single);
+    }
+    
+    // This code was expertly copied from @Yagero on github.com
+    // https://gist.github.com/yagero/2cd50a12fcc928a6446539119741a343
+    // (Seriously though, this function is a life saver, so thanks!)
+    public static bool DoesSceneExist(string _targetSceneID)
+    {
+	    if (string.IsNullOrEmpty(_targetSceneID))
+		    return false;
+
+	    for (int i = 0; i < SceneManager.sceneCountInBuildSettings; i++)
+	    {
+		    var scenePath = SceneUtility.GetScenePathByBuildIndex(i);
+		    var lastSlash = scenePath.LastIndexOf("/");
+		    var sceneName = scenePath.Substring(lastSlash + 1, scenePath.LastIndexOf(".") - lastSlash - 1);
+
+		    if (string.Compare(_targetSceneID, sceneName, true) == 0)
+			    return true;
+	    }
+
+	    return false;
     }
 }
 

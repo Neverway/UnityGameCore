@@ -30,8 +30,6 @@ public class Menu_Title : MonoBehaviour
     private System_SceneLoader sceneLoader;
     private System_MusicManager musicManager;
     [SerializeField] private AudioClip titleMusic;
-    [SerializeField] private GameObject[] targetObjects;
-    public Animator animator;
 
 
     //=-----------------=
@@ -44,24 +42,13 @@ public class Menu_Title : MonoBehaviour
         musicManager.FadeIn(0);
         musicManager.ResetChannels();
         musicManager.SetPrimaryChannel(titleMusic);
-        animator.speed = 0;
     }
 
     private void Start()
     {
         musicManager.ResetChannels();
-        StartCoroutine(OpeningSplash());
     }
 
-    private IEnumerator OpeningSplash()
-    {
-        yield return new WaitForSeconds(10.2f);
-        foreach (GameObject _object in targetObjects)
-        {
-            _object.SetActive(true);
-        }
-        animator.speed = 1;
-    }
 
 
     //=-----------------=

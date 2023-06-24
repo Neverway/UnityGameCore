@@ -6,13 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Resources/Scenes/Title.unity
-    guid: d62180d845ee7bff0aa91fb7c794b9e7
+    path: Assets/Packages/Neverway/NPAK-Basics/Resources/Scenes/Title.unity
+    guid: 845d2951617362f2190982df72ca393e
   - enabled: 1
     path: Assets/Packages/Neverway/NPAK-Basics/Resources/Scenes/Loading.unity
     guid: b4834179f3041a1529b466a1fe7ed903
   - enabled: 1
-    path: Assets/Resources/Scenes/ow_example.unity
-    guid: d90c6810b6a30feb49a97ce7b831d424
+    path: Assets/Packages/Neverway/NPAK-Basics/Resources/Scenes/Error.unity
+    guid: 850e6ab0bfb240546bdba0d93d99eef8
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 420cadfa014b166fc8439ddd1d12c2ce, type: 2}
