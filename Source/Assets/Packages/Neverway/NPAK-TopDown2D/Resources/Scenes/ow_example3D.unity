@@ -488,7 +488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8227a5e42049e50bcafe1e420a87d549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetEntity: {fileID: 0}
+  targetEntity: {fileID: 8912271709139807576}
 --- !u!114 &230832322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -928,9 +928,9 @@ GameObject:
   - component: {fileID: 363867213}
   - component: {fileID: 363867212}
   - component: {fileID: 363867211}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Hitbox
-  m_TagString: Untagged
+  m_TagString: Entity
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2620,7 +2620,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh69678
+  m_Name: pb_Mesh32578
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -2887,7 +2887,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh69586
+  m_Name: pb_Mesh32462
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -4671,7 +4671,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1549756146}
   - component: {fileID: 1549756148}
-  - component: {fileID: 1549756149}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -4745,19 +4744,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &1549756149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1549756145}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd4090a2862fcc18b84e21f27943d486, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mirror: {fileID: 729193237}
 --- !u!850595691 &1552366904
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -5008,7 +4994,7 @@ GameObject:
   - component: {fileID: 1648033124}
   m_Layer: 7
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: Entity
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5244,7 +5230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d328025b1372491c86b6ec5eb147cfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetEntity: {fileID: 0}
+  targetEntity: {fileID: 8912271709139807576}
 --- !u!114 &1703413620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5818,7 +5804,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-307648
+  m_Name: pb_Mesh32500
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -6414,55 +6400,6 @@ Transform:
   m_Father: {fileID: 1147395230726292722}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &2040648226054625520
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8912271709139807575}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 1
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!114 &2093907919268746167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8912271709139807575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea91d995d594889ada21852d6b832ef7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentController: {fileID: 11400000, guid: e0a2c84ec3f790d708f07795917072fc, type: 2}
-  fallbackController: {fileID: 11400000, guid: ed7b3e86cde46cdc996f2358746e4a25, type: 2}
-  stats: {fileID: 11400000, guid: 0973f192a65cb1765ba778bffae4cbec, type: 2}
-  movementMultiplier: 1
-  paused: 0
-  currentMovementSpeed: 0
-  currentHealth: 0
-  movementDirection: {x: 0, y: 0}
-  facingDirection: {x: 0, y: 0}
-  invulnerable: 0
 --- !u!483693784 &2540600739905636910
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -8720,9 +8657,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5576166735184043488}
   - component: {fileID: 3471731980339641179}
-  - component: {fileID: 2040648226054625520}
-  - component: {fileID: 2093907919268746167}
+  - component: {fileID: 8912271709139807576}
   - component: {fileID: 7583897202143261167}
+  - component: {fileID: 8912271709139807577}
   m_Layer: 10
   m_Name: Entity3D
   m_TagString: Untagged
@@ -8730,6 +8667,55 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8912271709139807576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8912271709139807575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4ea665601d991e4a8551c38a9c74bb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentController: {fileID: 11400000, guid: e0a2c84ec3f790d708f07795917072fc, type: 2}
+  fallbackController: {fileID: 11400000, guid: ed7b3e86cde46cdc996f2358746e4a25, type: 2}
+  stats: {fileID: 11400000, guid: 0973f192a65cb1765ba778bffae4cbec, type: 2}
+  movementMultiplier: 1
+  paused: 0
+  currentMovementSpeed: 0
+  currentHealth: 0
+  movementDirection: {x: 0, y: 0}
+  facingDirection: {x: 0, y: 0}
+  invulnerable: 0
+--- !u!54 &8912271709139807577
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8912271709139807575}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
 --- !u!483693784 &8945072904330098258
 TilemapRenderer:
   m_ObjectHideFlags: 0

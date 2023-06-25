@@ -49,6 +49,7 @@ public class Trigger_Interactable : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 	    var interaction = other.GetComponent<Trigger_Interaction>();
+	    print(interaction);
 	    if (!interaction) return;
 	    targetEntity = interaction.targetEntity;
 	    Interact();

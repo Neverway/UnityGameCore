@@ -9,8 +9,9 @@
 using System.Collections;
 using UnityEngine;
 
-public class Entity : MonoBehaviour
-{
+[RequireComponent(typeof(Rigidbody2D))]
+public class Entity2D : MonoBehaviour
+{/*
     //=-----------------=
     // Public Variables
     //=-----------------=
@@ -41,8 +42,7 @@ public class Entity : MonoBehaviour
     //=-----------------=
     // Reference Variables
     //=-----------------=
-    private Rigidbody2D entityRigidbody2D;
-    private Rigidbody entityRigidbody;
+    private Rigidbody2D entityRigidbody;
     private Animator animator;
 
     
@@ -82,8 +82,7 @@ public class Entity : MonoBehaviour
     
     private void GetReferences()
     {
-        entityRigidbody = GetComponent<Rigidbody>();
-        entityRigidbody2D = GetComponent<Rigidbody2D>();
+        entityRigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
     
@@ -101,17 +100,10 @@ public class Entity : MonoBehaviour
     {
         // Update object position
         var position = transform.position;
-        if (entityRigidbody2D)
-        {
-            entityRigidbody2D.MovePosition(position + new Vector3(
+        entityRigidbody.MovePosition(position + new Vector3(
                 movementDirection.x, 
                 movementDirection.y, 
                 position.z) * (currentMovementSpeed * movementMultiplier * Time.fixedDeltaTime));
-        }
-        if (entityRigidbody)
-        {
-            entityRigidbody.MovePosition(transform.forward + new Vector3(movementDirection.x, 0, movementDirection.y) * (currentMovementSpeed * movementMultiplier * Time.fixedDeltaTime));
-        }
     }
     
     private void UpdateAnimator()
@@ -187,6 +179,6 @@ public class Entity : MonoBehaviour
         if (!animator) return;
         animator.speed = storedAnimationSpeed;
         animator.enabled = animatorWasEnabled;
-    }
+    }*/
 }
 
