@@ -15,5 +15,7 @@
         <ui:Vector2Field label="Facing Direction" binding-path="facingDirection" />
         <ui:Toggle label="Paused" name="Toggle" binding-path="paused" />
         <ui:Toggle label="Invulnerable" name="Toggle" binding-path="invulnerable" />
+        <ui:Toggle label="Grounded" name="Toggle" binding-path="isGrounded" />
+        <ui:IntegerField label="Double Jumps" value="0" readonly="true" binding-path="currentDoubleJumps" />
     </ui:Foldout>
 </ui:UXML>

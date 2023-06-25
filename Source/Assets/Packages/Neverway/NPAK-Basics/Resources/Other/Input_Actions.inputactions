@@ -688,6 +688,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "LookHorizontal",
+                    "type": "Value",
+                    "id": "f953d077-e4d0-4800-a20c-b527dc8fd2bd",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "LookVertical",
+                    "type": "Value",
+                    "id": "a49f8f36-ef90-42de-8742-adfca859a905",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -1040,6 +1058,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "LookRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3821d282-a8fe-460d-96af-d362a4392127",
+                    "path": "<Mouse>/delta/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LookHorizontal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c18ff17f-f37d-4cf5-ab4d-8a38f815dc61",
+                    "path": "<Mouse>/delta/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LookVertical",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

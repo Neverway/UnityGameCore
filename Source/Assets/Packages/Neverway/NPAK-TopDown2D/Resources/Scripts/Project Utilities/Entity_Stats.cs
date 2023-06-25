@@ -16,6 +16,7 @@ public class Entity_Stats : ScriptableObject
     //=-----------------=
     // Public Variables
     //=-----------------=
+    [Header("Basic Entity Values")]
     public string characterName="???";
     public RuntimeAnimatorController animationController;
     public float walkSpeed=3;
@@ -23,6 +24,14 @@ public class Entity_Stats : ScriptableObject
     public float maxHealth=100;
     public float invulnerabilityDuration=1;
     public List<string> entityGroups;
+    [Header("3D Entity Values")] 
+    public float groundDrag=6;
+    public float airDrag=3;
+    public float aerialControlMultiplier=0.5f;
+    public float entityHeight=1;
+    public float jumpForce=12;
+    public float doubleJumpForce=9;
+    public int doubleJumps=0;
 
 
     //=-----------------=

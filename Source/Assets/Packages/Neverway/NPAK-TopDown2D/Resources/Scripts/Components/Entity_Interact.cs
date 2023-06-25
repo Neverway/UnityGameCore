@@ -24,7 +24,8 @@ public class Entity_Interact : MonoBehaviour
     //=-----------------=
     // Reference Variables
     //=-----------------=
-    private Input_Actions_2D.Player2DActions player2DActions;
+    private Input_Actions.Player2DActions player2DActions;
+    private Input_Actions.Player3DActions player3DActions;
     private Entity entity;
     private readonly Entity_Referencer entityReferencer = new Entity_Referencer();
     [SerializeField] private GameObject interactionPrefab; 
@@ -35,15 +36,13 @@ public class Entity_Interact : MonoBehaviour
     //=-----------------=
     private void Start()
     {
-        player2DActions = new Input_Actions_2D().Player2D;
-        player2DActions.Enable();
         entity = GetComponent<Entity>();
     }
 
     private void Update()
     {
-        if (entity != entityReferencer.GetPlayerEntity()) return;
-        if (player2DActions.Interact.WasPressedThisFrame()) Interact();
+        //if (entity != entityReferencer.GetPlayerEntity()) return;
+        //if (player2DActions.Interact.WasPressedThisFrame() || player3DActions.Interact.WasPressedThisFrame()) Interact();
     }
 
 

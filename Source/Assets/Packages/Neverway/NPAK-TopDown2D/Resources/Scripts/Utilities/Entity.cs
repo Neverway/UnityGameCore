@@ -36,7 +36,9 @@ public class Entity : MonoBehaviour
     private Vector2 storedMoveDirection; // used to restore momentum when un-pausing the entity
     private float storedAnimationSpeed; // used to restore animation when un-pausing the entity
     private bool animatorWasEnabled;
-
+    [SerializeField] private bool isGrounded;
+    [SerializeField] private int currentDoubleJumps;
+    
 
     //=-----------------=
     // Reference Variables
@@ -108,9 +110,34 @@ public class Entity : MonoBehaviour
                 movementDirection.y, 
                 position.z) * (currentMovementSpeed * movementMultiplier * Time.fixedDeltaTime));
         }
-        if (entityRigidbody)
+        
+        else if (entityRigidbody)
         {
-            entityRigidbody.MovePosition(transform.forward + new Vector3(movementDirection.x, 0, movementDirection.y) * (currentMovementSpeed * movementMultiplier * Time.fixedDeltaTime));
+            // Check grounded
+            isGrounded = Physics.Raycast(transform.position, Vector3.down, stats.entityHeight / 2 + 0.1f);
+            // Reset double jumps
+            if (isGrounded) currentDoubleJumps = stats.doubleJumps;
+            
+            ControlDrag3D();
+            // Apply Movement
+            var movementDirection3D = transform.forward * movementDirection.y + transform.right * movementDirection.x;
+            if (isGrounded)
+            {
+                entityRigidbody.AddForce(
+                    movementDirection3D.normalized *
+                    currentMovementSpeed * 
+                    movementMultiplier,
+                    ForceMode.Acceleration);
+            }
+            else
+            {
+                entityRigidbody.AddForce(
+                    movementDirection3D.normalized * 
+                    currentMovementSpeed * 
+                    movementMultiplier *
+                    stats.aerialControlMultiplier, 
+                    ForceMode.Acceleration);
+            }
         }
     }
     
@@ -130,6 +157,23 @@ public class Entity : MonoBehaviour
     {
         yield return new WaitForSeconds(stats.invulnerabilityDuration);
         invulnerable = false;
+    }
+
+    private void ControlDrag3D()
+    {
+        if (isGrounded) entityRigidbody.drag = stats.groundDrag;
+        else if (!isGrounded) entityRigidbody.drag = stats.airDrag;
+    }
+
+    public void Jump3D()
+    {
+        if (isGrounded) entityRigidbody.AddForce(transform.up * stats.jumpForce, ForceMode.Impulse);
+
+        else if (!isGrounded && currentDoubleJumps >= 1)
+        {
+            entityRigidbody.AddForce(transform.up * stats.doubleJumpForce, ForceMode.Impulse);
+            --currentDoubleJumps;
+        }
     }
     
     
