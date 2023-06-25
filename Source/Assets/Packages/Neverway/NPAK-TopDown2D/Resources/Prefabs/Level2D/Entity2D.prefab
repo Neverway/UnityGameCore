@@ -143,6 +143,7 @@ GameObject:
   - component: {fileID: 4532481958131902007}
   - component: {fileID: 1340202676491912604}
   - component: {fileID: 1425252584573390555}
+  - component: {fileID: 7491711414684593283}
   m_Layer: 10
   m_Name: Entity2D
   m_TagString: Untagged
@@ -280,31 +281,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea91d995d594889ada21852d6b832ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brain: {fileID: 0}
+  currentController: {fileID: 0}
+  fallbackController: {fileID: 0}
   stats: {fileID: 0}
-  equippedUtility: {fileID: 0}
-  equippedWeapon: {fileID: 0}
-  equippedMagic: {fileID: 0}
-  equippedDefense: {fileID: 0}
-  inventory:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  currentSpeed: 0
-  moveDirection: {x: 0, y: 0}
-  faceDirection: {x: 0, y: 0}
+  movementMultiplier: 1
   paused: 0
+  currentMovementSpeed: 0
   currentHealth: 0
-  target: {fileID: 0}
-  netObject: {fileID: 0}
-  interactPrefab: {fileID: 3238513325049928104, guid: dd8fcd6621d040c0cb6d82f5b9443fcd, type: 3}
+  movementDirection: {x: 0, y: 0}
+  facingDirection: {x: 0, y: 0}
+  invulnerable: 0
+--- !u!114 &7491711414684593283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8459504347889987643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c1bfd696f33bb678997cb7fa4d130ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionPrefab: {fileID: 3238513325049928104, guid: dd8fcd6621d040c0cb6d82f5b9443fcd, type: 3}
 --- !u!1 &8778334135355113570
 GameObject:
   m_ObjectHideFlags: 0

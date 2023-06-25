@@ -10,7 +10,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider2D))]
 public class Trigger_Damage : MonoBehaviour
 {
     //=-----------------=
@@ -54,6 +53,26 @@ public class Trigger_Damage : MonoBehaviour
     }
 
     private void OnTriggerExit2D(Collider2D other)
+    {
+	    if (!other.CompareTag("Entity")) return;
+	    var targetEnt = other.gameObject.transform.parent.GetComponent<Entity>();
+	    if(entitiesInTrigger.Contains(targetEnt))
+	    {
+		    entitiesInTrigger.Remove(targetEnt);
+	    }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+	    if (!other.CompareTag("Entity")) return;
+	    var targetEnt = other.gameObject.transform.parent.GetComponent<Entity>();
+	    if(!entitiesInTrigger.Contains(targetEnt))
+	    {
+		    entitiesInTrigger.Add(targetEnt);
+	    }
+    }
+
+    private void OnTriggerExit(Collider other)
     {
 	    if (!other.CompareTag("Entity")) return;
 	    var targetEnt = other.gameObject.transform.parent.GetComponent<Entity>();

@@ -67,6 +67,27 @@ public class Trigger_Event : MonoBehaviour
 	    entitiesInTrigger.Remove(targetEnt);
 	    if (entitiesInTrigger.Count == 0) OnAllExited.Invoke();
     }
+    private void OnTriggerEnter(Collider other)
+    {
+	    if (!other.CompareTag("Entity") || activated) return;
+	    var targetEnt = other.gameObject.transform.parent.GetComponent<Entity>();
+	    if (!targetEnt) return;
+	    if (targetType != 0 && (targetType != 1 || targetEnt != entityReferencer.GetPlayerEntity())) return;
+	    if (!entitiesInTrigger.Contains(targetEnt)) entitiesInTrigger.Add(targetEnt);
+	    Interact();
+    }
+    
+    private void OnTriggerExit(Collider other)
+    {
+	    if (!other.CompareTag("Entity") || !activated) return;
+	    var targetEnt = other.gameObject.transform.parent.GetComponent<Entity>();
+	    if (!targetEnt) return;
+	    if (targetType != 0 && (targetType != 1 || targetEnt != entityReferencer.GetPlayerEntity())) return;
+	    if (!entitiesInTrigger.Contains(targetEnt)) return;
+	    OnExited.Invoke();
+	    entitiesInTrigger.Remove(targetEnt);
+	    if (entitiesInTrigger.Count == 0) OnAllExited.Invoke();
+    }
     
     private void Interact()
     {
