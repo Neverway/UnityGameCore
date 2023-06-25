@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 4844910}
   - component: {fileID: 4844909}
   m_Layer: 5
-  m_Name: Text (Project Title)
+  m_Name: Text (Title)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 93797321}
   - component: {fileID: 93797320}
   m_Layer: 5
-  m_Name: Text (Project Title) (1)
+  m_Name: Text (Subtitle)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1247,9 +1247,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1331581158}
-        m_TargetAssemblyTypeName: Menu_Title, Assembly-CSharp
-        m_MethodName: StartGame
+      - m_Target: {fileID: 1331581157}
+        m_TargetAssemblyTypeName: Menu_Error, Assembly-CSharp
+        m_MethodName: ReturnToTitle
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2388,7 +2388,7 @@ GameObject:
   - component: {fileID: 1331581154}
   - component: {fileID: 1331581156}
   - component: {fileID: 1331581155}
-  - component: {fileID: 1331581158}
+  - component: {fileID: 1331581157}
   m_Layer: 5
   m_Name: '[Error]'
   m_TagString: Untagged
@@ -2457,7 +2457,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1331581153}
   m_CullTransparentMesh: 1
---- !u!114 &1331581158
+--- !u!114 &1331581157
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2466,7 +2466,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1331581153}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e86648843e74f12b1b6a2841032fe04e, type: 3}
+  m_Script: {fileID: 11500000, guid: a488516fde559d91f8c38a6c73eed23c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   titleMusic: {fileID: 0}
@@ -3961,8 +3961,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1331581158}
-        m_TargetAssemblyTypeName: Menu_Title, Assembly-CSharp
+      - m_Target: {fileID: 1331581157}
+        m_TargetAssemblyTypeName: Menu_Error, Assembly-CSharp
         m_MethodName: QuitToDesktop
         m_Mode: 1
         m_Arguments:

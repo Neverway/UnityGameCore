@@ -2,14 +2,13 @@
 // 
 // Type: Utility
 // Purpose: Teleport an entity to a specified exit position
-// Applied to: A 2D warp trigger
+// Applied to: A warp trigger
 //
 //=============================================================================
 
 using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider2D))]
-public class Trigger_Warp_2D : MonoBehaviour
+public class Trigger_Warp : MonoBehaviour
 {
     //=-----------------=
     // Public Variables
@@ -40,6 +39,12 @@ public class Trigger_Warp_2D : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other)
+    {
+	    if (!other.CompareTag("Entity")) return;
+	    other.gameObject.transform.parent.transform.position = exitPosition.position+exitOffset;
+    }
+
+    private void OnTriggerEnter(Collider other)
     {
 	    if (!other.CompareTag("Entity")) return;
 	    other.gameObject.transform.parent.transform.position = exitPosition.position+exitOffset;
