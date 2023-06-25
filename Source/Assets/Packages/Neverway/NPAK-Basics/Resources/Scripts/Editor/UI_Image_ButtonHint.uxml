@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:Label tabindex="-1" text="Target Input Action" display-tooltip-when-elided="true" name="Label" style="-unity-font-style: bold; font-size: 20px;" />
+    <ui:TextField picking-mode="Ignore" label="Target Action Map" binding-path="targetActionMap" />
+    <ui:TextField picking-mode="Ignore" label="Target Action" binding-path="targetAction" />
+    <ui:VisualElement style="height: 5px; border-top-width: 2px; border-top-color: rgba(0, 0, 0, 0.3); margin-top: 5px;" />
+    <ui:Label tabindex="-1" text="Target Input Action" display-tooltip-when-elided="true" name="Label" style="-unity-font-style: bold; font-size: 20px;" />
+    <ui:Toggle label="Exempt From Hiding Button Hints" binding-path="exemptFromHidingHints" />
+    <ui:DropdownField label="Target Input Device" index="0" choices="Active Input Device, Keyboard, Gamepad" binding-path="targetInputDevice" />
+</ui:UXML>

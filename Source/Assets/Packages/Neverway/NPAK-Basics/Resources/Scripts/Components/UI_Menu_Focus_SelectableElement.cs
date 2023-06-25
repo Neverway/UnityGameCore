@@ -8,7 +8,7 @@
 
 using UnityEngine;
 
-public class UI_Menu_SelectableFocusElement : MonoBehaviour
+public class UI_Menu_Focus_SelectableElement : MonoBehaviour
 {
     //=-----------------=
     // Public Variables

@@ -1,0 +1,15 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:Label tabindex="-1" text="Parameters" display-tooltip-when-elided="true" name="Label" style="-unity-font-style: bold; font-size: 20px;" />
+    <ui:Toggle label="Disable &apos;Close Menu&apos; Action" binding-path="disableCloseMenuAction" />
+    <ui:Toggle label="Pauses Game While Open" binding-path="pausingMenu" />
+    <ui:Toggle label="Activates On Scene Start" binding-path="pausingMenu" />
+    <ui:VisualElement style="height: 5px; border-top-width: 2px; border-top-color: rgba(0, 0, 0, 0.3); margin-top: 5px;" />
+    <ui:Label tabindex="-1" text="Events" display-tooltip-when-elided="true" name="Label" style="-unity-font-style: bold; font-size: 20px;" />
+    <uie:PropertyField binding-path="OnMenuApply" label="On Menu Apply" />
+    <uie:PropertyField binding-path="OnMenuOpen" label="On Menu Open" name="PropertyField" />
+    <uie:PropertyField binding-path="OnMenuClose" label="On Menu Close" name="PropertyField" />
+    <ui:VisualElement style="height: 5px; border-top-width: 2px; border-top-color: rgba(0, 0, 0, 0.3); margin-top: 5px;" />
+    <ui:Label tabindex="-1" text="References" display-tooltip-when-elided="true" name="Label" style="-unity-font-style: bold; font-size: 20px;" />
+    <uie:ObjectField label="Menu Container" name="ObjectField" focusable="true" binding-path="targetMenuContainer" />
+    <uie:ObjectField label="Selected Button When Opened" binding-path="selectedButtonWhenOpen" />
+</ui:UXML>

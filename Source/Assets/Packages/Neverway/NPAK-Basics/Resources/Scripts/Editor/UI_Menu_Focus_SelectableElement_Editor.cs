@@ -10,10 +10,9 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-[CustomEditor(typeof(System_ButtonHintManager))]
-public class System_ButtonHintManager_Editor : Editor
+[CustomEditor(typeof(UI_Menu_Focus_SelectableElement))]
+public class UI_Menu_Focus_SelectableElement_Editor : Editor
 {
-    [SerializeField]
     public VisualTreeAsset UXML;
     public override VisualElement CreateInspectorGUI()
     {

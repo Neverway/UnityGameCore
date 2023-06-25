@@ -7,14 +7,12 @@
 
 
 using UnityEditor;
+using UnityEngine;
 using UnityEngine.UIElements;
 
 [CustomEditor(typeof(Menu_Options))]
 public class Menu_Options_Editor : Editor
 {
-    //=-----------------=
-    // Public Variables
-    //=-----------------=
     public VisualTreeAsset UXML;
     public override VisualElement CreateInspectorGUI()
     {
@@ -22,30 +20,4 @@ public class Menu_Options_Editor : Editor
         UXML.CloneTree(root);
         return root;
     }
-
-
-    //=-----------------=
-    // Private Variables
-    //=-----------------=
-    
-    
-    //=-----------------=
-    // Reference Variables
-    //=-----------------=
-
-
-    //=-----------------=
-    // Mono Functions
-    //=-----------------=
-    
-    
-    //=-----------------=
-    // Internal Functions
-    //=-----------------=
-    
-    
-    //=-----------------=
-    // External Functions
-    //=-----------------=
 }
-

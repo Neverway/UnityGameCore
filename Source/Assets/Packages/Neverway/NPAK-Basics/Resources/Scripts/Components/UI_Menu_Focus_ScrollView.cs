@@ -43,7 +43,7 @@ public class UI_Menu_Focus_ScrollView : MonoBehaviour
     {
         scrollRect = GetComponent<ScrollRect>();
 
-        var elements = contentWindow.GetComponentsInChildren<UI_Menu_SelectableFocusElement>();
+        var elements = contentWindow.GetComponentsInChildren<UI_Menu_Focus_SelectableElement>();
         focusableElements.Clear();
         for (int i = 0; i < elements.Length; i++)
         {
