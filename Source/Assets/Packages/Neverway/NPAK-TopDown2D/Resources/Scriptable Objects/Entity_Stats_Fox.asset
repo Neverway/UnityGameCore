@@ -21,8 +21,9 @@ MonoBehaviour:
   entityGroups:
   - Friendly
   groundDrag: 6
-  airDrag: 0
-  aerialControlMultiplier: 1
+  airDrag: 3
+  aerialControlMultiplier: 0.3
   entityHeight: 1
   jumpForce: 12
-  doubleJumps: 3
+  doubleJumpForce: 9
+  doubleJumps: 1

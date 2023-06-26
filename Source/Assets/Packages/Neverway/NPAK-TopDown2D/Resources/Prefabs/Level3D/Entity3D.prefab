@@ -410,12 +410,17 @@ MonoBehaviour:
   fallbackController: {fileID: 11400000, guid: ed7b3e86cde46cdc996f2358746e4a25, type: 2}
   stats: {fileID: 11400000, guid: 0973f192a65cb1765ba778bffae4cbec, type: 2}
   movementMultiplier: 7
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 1
   paused: 0
   currentMovementSpeed: 0
   currentHealth: 0
   movementDirection: {x: 0, y: 0}
   facingDirection: {x: 0, y: 0}
   invulnerable: 0
+  isGrounded: 0
+  currentDoubleJumps: 0
 --- !u!114 &9056484889317527687
 MonoBehaviour:
   m_ObjectHideFlags: 0

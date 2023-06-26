@@ -7,6 +7,7 @@
 //=============================================================================
 
 using System.Collections;
+using UnityEditor;
 using UnityEngine;
 
 public class Entity : MonoBehaviour
@@ -18,6 +19,7 @@ public class Entity : MonoBehaviour
     public Entity_Controller fallbackController;
     public Entity_Stats stats;
     public float movementMultiplier=1;
+    [SerializeField] private LayerMask groundMask;
 
     
     //=-----------------=
@@ -38,7 +40,7 @@ public class Entity : MonoBehaviour
     private bool animatorWasEnabled;
     [SerializeField] private bool isGrounded;
     [SerializeField] private int currentDoubleJumps;
-    
+
 
     //=-----------------=
     // Reference Variables
@@ -114,7 +116,7 @@ public class Entity : MonoBehaviour
         else if (entityRigidbody)
         {
             // Check grounded
-            isGrounded = Physics.Raycast(transform.position, Vector3.down, stats.entityHeight / 2 + 0.1f);
+            isGrounded = Physics.CheckSphere(transform.position - new Vector3(0, 0, 0), 0.4f, groundMask);
             // Reset double jumps
             if (isGrounded) currentDoubleJumps = stats.doubleJumps;
             

@@ -8,6 +8,7 @@
     <ui:FloatField label="Movement Multiplier" value="1" tooltip="This will multiply the current movement speed of the entity. This is usually set by external scripts during runtime, like if you have a speed boost trigger." binding-path="movementMultiplier" />
     <ui:Button text="Create New Stats" display-tooltip-when-elided="true" />
     <ui:VisualElement style="height: 5px; border-top-width: 2px; border-top-color: rgba(0, 0, 0, 0.3); margin-top: 5px;" />
+    <uie:PropertyField binding-path="groundMask" label="Ground Mask" />
     <ui:Foldout text="Debuging" name="Foldout" value="false">
         <ui:FloatField label="Current Health" name="FloatField" readonly="true" binding-path="currentHealth" />
         <ui:FloatField label="Current Movement Speed" binding-path="currentMovementSpeed" readonly="true" />
