@@ -40,6 +40,7 @@ public class Entity : MonoBehaviour
     private bool animatorWasEnabled;
     [SerializeField] private bool isGrounded;
     [SerializeField] private int currentDoubleJumps;
+    private bool jumpCooldown;
 
 
     //=-----------------=
@@ -139,6 +140,7 @@ public class Entity : MonoBehaviour
                     movementMultiplier *
                     stats.aerialControlMultiplier, 
                     ForceMode.Acceleration);
+                entityRigidbody.AddForce(Vector3.up * -stats.fallRate, ForceMode.Acceleration);
             }
         }
     }
@@ -160,6 +162,13 @@ public class Entity : MonoBehaviour
         yield return new WaitForSeconds(stats.invulnerabilityDuration);
         invulnerable = false;
     }
+    
+    private IEnumerator JumpCooldown()
+    {
+        jumpCooldown = true;
+        yield return new WaitForSeconds(stats.jumpCooldown);
+        jumpCooldown = false;
+    }
 
     private void ControlDrag3D()
     {
@@ -169,12 +178,17 @@ public class Entity : MonoBehaviour
 
     public void Jump3D()
     {
-        if (isGrounded) entityRigidbody.AddForce(transform.up * stats.jumpForce, ForceMode.Impulse);
+        if (isGrounded && !jumpCooldown)
+        {
+            entityRigidbody.AddForce(transform.up * stats.jumpForce, ForceMode.Impulse);
+            StartCoroutine(JumpCooldown());
+        }
 
-        else if (!isGrounded && currentDoubleJumps >= 1)
+        else if (!isGrounded && currentDoubleJumps >= 1 && !jumpCooldown)
         {
             entityRigidbody.AddForce(transform.up * stats.doubleJumpForce, ForceMode.Impulse);
             --currentDoubleJumps;
+            StartCoroutine(JumpCooldown());
         }
     }
     

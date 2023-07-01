@@ -26,11 +26,13 @@ public class Entity_Stats : ScriptableObject
     public List<string> entityGroups;
     [Header("3D Entity Values")] 
     public float groundDrag=6;
-    public float airDrag=3;
-    public float aerialControlMultiplier=0.5f;
+    public float airDrag=2;
+    public float aerialControlMultiplier=0.6f;
     public float entityHeight=1;
-    public float jumpForce=12;
-    public float doubleJumpForce=9;
+    public float jumpForce=15;
+    public float jumpCooldown = 0.25f;
+    public float fallRate=32;
+    public float doubleJumpForce=25;
     public int doubleJumps=0;
 
 
