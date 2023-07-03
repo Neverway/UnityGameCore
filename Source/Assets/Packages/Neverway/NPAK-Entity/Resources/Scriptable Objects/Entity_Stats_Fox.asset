@@ -20,12 +20,12 @@ MonoBehaviour:
   invulnerabilityDuration: 1
   entityGroups:
   - Friendly
-  groundDrag: 6
+  groundDrag: 6.5
   airDrag: 2
-  aerialControlMultiplier: 0.6
+  aerialControlMultiplier: 0.5
   entityHeight: 1
-  jumpForce: 16
+  jumpForce: 13.25
   jumpCooldown: 0.25
-  fallRate: 32
-  doubleJumpForce: 25
-  doubleJumps: 0
+  fallRate: 0
+  doubleJumpForce: 16
+  doubleJumps: 4

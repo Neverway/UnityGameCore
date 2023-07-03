@@ -140,7 +140,7 @@ public class Entity : MonoBehaviour
                     movementMultiplier *
                     stats.aerialControlMultiplier, 
                     ForceMode.Acceleration);
-                entityRigidbody.AddForce(Vector3.up * -stats.fallRate, ForceMode.Acceleration);
+                entityRigidbody.AddForce(Vector3.up * -stats.fallRate, ForceMode.Force);
             }
         }
     }
