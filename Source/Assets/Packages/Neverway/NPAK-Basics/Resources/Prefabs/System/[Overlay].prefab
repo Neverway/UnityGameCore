@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8413091661307078036}
   - component: {fileID: 6688304384003241993}
   - component: {fileID: 2655696708373439907}
-  - component: {fileID: 2326074477043168978}
   m_Layer: 0
   m_Name: '[FPS]'
   m_TagString: Untagged
@@ -78,18 +77,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2326074477043168978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1261181232739709884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d54ef0e89e914f62ba29dc2030d0804d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1589917586182546317
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,13 +134,14 @@ GameObject:
   - component: {fileID: 7353826166830143302}
   - component: {fileID: 5502298654735086513}
   - component: {fileID: 7524560506307319339}
+  - component: {fileID: 5542948223951287016}
   m_Layer: 0
   m_Name: Text (FPS)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7353826166830143302
 RectTransform:
   m_ObjectHideFlags: 0
@@ -202,7 +190,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: FPS
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 47025708f3638d135a1fe208c622eb44, type: 2}
   m_sharedMaterial: {fileID: -3059763358329552070, guid: 47025708f3638d135a1fe208c622eb44, type: 2}
@@ -268,6 +256,19 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &5542948223951287016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2926004855061067508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d54ef0e89e914f62ba29dc2030d0804d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundImage: {fileID: 2655696708373439907}
