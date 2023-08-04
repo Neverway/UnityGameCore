@@ -6,6 +6,7 @@
 //
 //=============================================================================
 
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
@@ -28,6 +29,7 @@ public class UI_Menu : MonoBehaviour
     //=-----------------=
     // Private Variables
     //=-----------------=
+    private bool initialInputDelay;
     
     
     //=-----------------=
@@ -54,29 +56,37 @@ public class UI_Menu : MonoBehaviour
 
     private void Update()
     {
-	    if (action.Apply.IsPressed())
+	    if (initialInputDelay) return;
+	    if (action.Apply.WasPressedThisFrame())
 	    {
 		    print("apply");
 		    OnMenuApply.Invoke();
 	    }
-	    if (action.Close.IsPressed() && !disableCloseMenuAction) { CloseMenu(); }
+	    if (action.Close.WasPressedThisFrame() && !disableCloseMenuAction) { CloseMenu(); }
     }
     
     //=-----------------=
     // Internal Functions
     //=-----------------=
+    private IEnumerator InitialInputDelay()
+    {
+	    yield return new WaitForSeconds(0.15f);
+	    initialInputDelay = false;
+    }
     
     
     //=-----------------=
     // External Functions
     //=-----------------=
     public void OpenMenu()
-    {   
+    {
+	    initialInputDelay = true;
 	    if (targetMenuContainer) targetMenuContainer.SetActive(true);
 	    EventSystem.current.SetSelectedGameObject(selectedButtonWhenOpened);
 	    if (!menuManager) menuManager = FindObjectOfType<System_MenuManager>();
-	    //if (pausingMenu && menuManager) menuManager.menuOpen = true;
-	    OnMenuOpen.Invoke();    
+	    if (pausingMenu && menuManager) menuManager.menuOpen = true;
+	    OnMenuOpen.Invoke();
+	    StartCoroutine(InitialInputDelay());
     }
     
     public void CloseMenu()
@@ -86,8 +96,13 @@ public class UI_Menu : MonoBehaviour
 	    targetMenuContainer.SetActive(false);
 	    EventSystem.current.SetSelectedGameObject(null);
 	    if (!menuManager) menuManager = FindObjectOfType<System_MenuManager>();
-	    //if (pausingMenu && menuManager) menuManager.menuOpen = false;
+	    if (pausingMenu && menuManager) menuManager.menuOpen = false;
 	    OnMenuClose.Invoke();
+    }
+
+    public void SetDisableCloseMenuAction(bool _value)
+    {
+	    disableCloseMenuAction = _value;
     }
 }
 
